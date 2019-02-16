@@ -1,7 +1,7 @@
 module.exports = {
   development: {
     username: "root",
-    password: process.env.JAWS_DB_PASSWORD,
+    password: process.env.LOCAL_DB_PASSWORD,
     database: "exampledb",
     host: "localhost",
     dialect: "mysql"
