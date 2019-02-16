@@ -1,0 +1,21 @@
+module.exports = {
+  development: {
+    username: "root",
+    password: process.env.JAWS_DB_PASSWORD,
+    database: "exampledb",
+    host: "localhost",
+    dialect: "mysql"
+  },
+  test: {
+    username: "root",
+    password: null,
+    database: "testdb",
+    host: "localhost",
+    dialect: "mysql",
+    logging: false
+  },
+  production: {
+    jawsDB: "JAWSDB_URL",
+    dialect: "mysql"
+  }
+};
