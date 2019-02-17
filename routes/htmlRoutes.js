@@ -1,6 +1,7 @@
 var db = require("../models");
 
 module.exports = function(app) {
+  db.findAll();
   // Load index page
   app.get("/", (req, res) => {
     res.render("index", {
