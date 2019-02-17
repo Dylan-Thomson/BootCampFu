@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+$colors: (
+    nav: #fafafb,
+    primary: #fff,
+    border: #0095ff,
+    button1: #f48024,
+    button2: #0095ff,
+    input-border: lightgrey
+);
+
+$inputheight: 25px;
+$inputborderradius: 10px;
+$inputpadding: 5px;
+
+@function color ($color-name) {
+    @return map-get($colors, $color-name);
+}
+
+.hidden {
+    display: none;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Condensed", sans-serif;
+
+    nav {
+        position: fixed;
+        display: flex;
+        top: 0;
+        width: 100%;
+        height: 50px;
+        background-color: color(nav);
+        border-top: 2px solid color(border);
+        border-bottom: 2px solid rgb(233, 231, 231);
+        z-index: 999;
+    
+        .logo {
+            margin-top: 16px;
+            margin-right:auto;
+            margin-left: 10px;
+        }
+
+        .search-div {
+            display: inline-block;
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: 10px;
+        
+
+            #search {
+                border: 1px solid color(input-border);
+                border-radius: $inputborderradius;
+                width: 150px;
+                height: $inputheight;
+                margin-right: 5px;
+                padding-left: $inputpadding;
+                outline: none !important;
+
+            }
+
+            #search-btn {
+                border: none;
+                height: 28px;
+                width: 28px;
+                border-radius: 10px;
+                background-color: color(button1);
+                cursor: pointer;
+            }
+        }
+
+        .login-div {
+
+            margin-top: 10px;
+            margin-right: 10px;
+
+            #signup-login-btn {
+                position: relative;
+                border: none;
+                height: 28px;
+                width: 28px;
+                border-radius: 10px;
+                background-color: color(button1);
+                cursor: pointer;
+            }
+        }
+    }
+
+    .topic-section {
+        margin-top: 75px;
+        margin-left: 10px;
+
+        h1 {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 19.920px;
+            margin-bottom: 19.920px;
+        }
+
+        ul {
+            padding: 0;
+            list-style-type: none;
+            margin-bottom: 16px;
+   
+            li {
+                display: inline-block;
+                padding: 3px;
+                width: 80px;
+                border: 1px solid color(button1);
+                background-color: color(button1);
+                margin-top: 5px;
+                text-align: center;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .week-section {
+        margin-left: 10px;
+
+      
+        h1 {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 19.920px;
+            margin-bottom: 19.920px;
+        }
+        
+
+        ul {
+            padding: 0;
+            list-style-type: none;
+   
+            li {
+                display: inline-block;
+                padding: 3px;
+                width: 80px;
+                border: 1px solid color(button2);
+                background-color: color(button2);
+                margin-top: 5px;
+                text-align: center;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .topquestions-section {
+        margin-left: 10px;
+
+        h1 {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 19.920px;
+            margin-bottom: 19.920px;
+        }
+    }
+
+    .ask-section {
+        margin-left: 10px;
+
+        h1 {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 19.920px;
+            margin-bottom: 19.920px;
+        }
+
+        .form-para {
+            #question-title {
+                margin-left: 10px;
+                margin-bottom: 16px;
+                width: 250px;
+                height: $inputheight;
+                border-radius: $inputborderradius;
+                border: 1px solid color(input-border);
+                outline: none !important;
+                padding-left: $inputpadding;
+                font-family: "Roboto Condensed", sans-serif;
+            }
+
+            #question-topic {
+                margin-left: 10px;
+                margin-bottom: 16px;
+                width: 200px;
+                height: $inputheight;
+                border-radius: $inputborderradius;
+                border: 1px solid color(input-border);
+                outline: none !important;
+                padding-left: $inputpadding;
+                font-family: "Roboto Condensed", sans-serif;
+            }
+
+            #question-week {
+                margin-left: 10px;
+                margin-bottom: 16px;
+                width: 80px;
+                height: $inputheight;
+                border-radius: $inputborderradius;
+                border: 1px solid color(input-border);
+                outline: none !important;
+                padding-left: $inputpadding;
+                font-family: "Roboto Condensed", sans-serif;
+
+            }
+                
+            #question-body {
+                margin-top: 10px;
+                margin-bottom: 16px;
+                height: 100px;
+                width: 280px;
+                border-radius: $inputborderradius;
+                border: 1px solid color(input-border);
+                outline: none !important;
+                overflow: auto;
+                font-family: "Roboto Condensed", sans-serif;
+
+            }
+
+            #submit-custom-question-btn {
+                height: 30px;
+                width: 100px;
+                border: none;
+                font-family: "Roboto Condensed", sans-serif;
+                background-color: color(button1);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
