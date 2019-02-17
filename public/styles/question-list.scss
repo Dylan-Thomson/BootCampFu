@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+$colors: (
+    nav: #fafafb,
+    primary: #fff,
+    border: #0095ff,
+    button1: #f48024,
+    button2: #0095ff,
+    input-border: lightgrey
+);
+
+$inputheight: 25px;
+$inputborderradius: 10px;
+$inputpadding: 5px;
+
+@function color ($color-name) {
+    @return map-get($colors, $color-name);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Condensed", sans-serif;
+
+    nav {
+        position: fixed;
+        display: flex;
+        top: 0;
+        width: 100%;
+        height: 50px;
+        background-color: color(nav);
+        border-top: 2px solid color(border);
+        border-bottom: 2px solid rgb(233, 231, 231);
+        z-index: 999;
+    
+        .logo {
+            margin-top: 16px;
+            margin-right:auto;
+            margin-left: 10px;
+        }
+
+        .search-div {
+            display: inline-block;
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: 10px;
+        
+
+            #search {
+                border: 1px solid color(input-border);
+                border-radius: $inputborderradius;
+                width: 150px;
+                height: $inputheight;
+                margin-right: 5px;
+                padding-left: $inputpadding;
+                outline: none !important;
+
+            }
+
+            #search-btn {
+                border: none;
+                height: 28px;
+                width: 28px;
+                border-radius: 10px;
+                background-color: color(button1);
+                cursor: pointer;
+            }
+        }
+
+        .login-div {
+
+            margin-top: 10px;
+            margin-right: 10px;
+
+            #signup-login-btn {
+                position: relative;
+                border: none;
+                height: 28px;
+                width: 28px;
+                border-radius: 10px;
+                background-color: color(button1);
+                cursor: pointer;
+            }
+        }
+    }
+
+    .question-list {
+
+        margin-top: 75px;
+        
+
+        h1 {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 19.920px;
+            margin-bottom: 19.920px;
+            text-align: center;
+        }
+
+        .questions {
+            border-top: 2px solid rgb(233, 231, 231);
+            border-bottom: 2px solid rgb(233, 231, 231);
+            padding: 10px;
+            height: 150px;
+            position: relative;
+
+            //use js here depending on length of question
+            // .question-body {
+            //     white-space: nowrap;
+            //     overflow: hidden;
+            //     text-overflow: ellipsis;
+            // }
+
+            .upvotes-div {
+
+                position: absolute;
+                top: 50%;
+                margin-top: -39.5px;
+
+                .upvote {
+                    cursor: pointer;
+                }
+                
+                .upvotes-num {
+                    font-size: 35px;
+                }
+
+                .downvote {
+                    cursor: pointer;
+                }
+                
+            }
+
+            .question-content-div {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-left: -80px;
+                margin-top: -40px;
+
+                .question-title {
+                    margin-top: -20px;
+                }
+
+                .question-body {
+                    margin-top: 20px;
+                }
+
+                .author {
+                    margin-top: 20px;
+                }
+            }
+        }
+
+
+    }
+}

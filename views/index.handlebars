@@ -1,33 +1,81 @@
-<div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BootCampFoo</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/reset.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+    <nav>
+        <div class="logo">BCF</div>
+        <div class="search-div">
+            <input id="search" placeholder="Search">
+            <button id="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="login-div">
+            <button id="signup-login-btn"><i class="fas fa-sign-in-alt"></i></button>
+        </div>
+    </nav>
+
+    <section class="topic-section">
+        <h1>Browse Questions by Topic</h1>
+        <ul>
+            <li>HTML/CSS</li>
+            <li>JavaScript</li>
+            <li>Node</li>
+            <li>Firebase</li>
+            <li>Express</li>
+            <li>React</li>
+        </ul>
+    </section>
+
+    <section class="week-section">
+        <h1>Browse Questions by Week</h1>
+        <ul>
+            <li>Week 1/2 HTML/CSS</li>
+            <li>Week 3 JavaScript</li>
+            <li>Week 12 Node</li>
+            <li>Week 15 Handlebars </li>
+            <li>Week 20 React</li>
+            <li>Week 24 Java</li>
+        </ul>
+    </section>
+
+    <section class="topquestions-section">
+        <h1>Top Questions</h1>
+    </section>
+
+    <section class="ask-section">
+        <h1>Ask A Question</h1>
+        <p class="form-para">
+            Title:
+            <input id="question-title" placeholder="Need help with CSS!">
+        </p>
+        <p class="form-para">
+            Topic:
+            <input id="question-topic" placeholder="e.g. Java">
+        </p>
+        <p class="form-para">
+            Week Number:
+            <input id="question-week" placeholder="e.g. Week 1">
+        </p>
+        <p class="form-para">
+            Question:<br>
+            <textarea id="question-body" placeholder="e.g. I'm going to cry"></textarea>
+        </p>
+        <p class="form-para">
+            <button id="submit-custom-question-btn">Help!!!</button>
+        </p>
+    </section>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+</body>
+</html>
