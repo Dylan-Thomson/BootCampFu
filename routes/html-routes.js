@@ -13,6 +13,7 @@ module.exports = function(app) {
       include: [db.User, db.Answer],
       order: [["updatedAt", "DESC"]]
     }).then(dbQuestion => {
+      console.log(dbQuestion);
       res.render("question-list", {
         style: "question-list.css",
         questions: dbQuestion

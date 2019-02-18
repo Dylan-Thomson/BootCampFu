@@ -18,7 +18,7 @@ module.exports = function(app) {
 
   app.get("/api/questions", (req, res) => {
     db.Question.findAll({
-      include: [db.User],
+      include: [db.User, db.Answer],
       order: [["updatedAt", "DESC"]]
     }).then(dbQuestion => {
       res.json(dbQuestion);

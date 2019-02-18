@@ -17,7 +17,11 @@
         <p>{{text}}</p>
         <p>{{User.username}}</p>
         <p>{{updatedAt}}</p>
+
         <br>
+        {{#each Answers}}
+            <p>{{text}}</p>
+        {{/each}}
     {{/each}}
 
     <div class="questions">
