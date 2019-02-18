@@ -29,6 +29,26 @@ body nav .logo {
   margin-left: 10px;
 }
 
+body nav .logo .redirect-link:link {
+  color: #111;
+  text-decoration: none;
+}
+
+body nav .logo .redirect-link:visited {
+  color: #111;
+  text-decoration: none;
+}
+
+body nav .logo .redirect-link:hover {
+  color: #111;
+  text-decoration: none;
+}
+
+body nav .logo .redirect-link:active {
+  color: #111;
+  text-decoration: none;
+}
+
 body nav .search-div {
   display: inline-block;
   margin-top: 10px;

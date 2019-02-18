@@ -40,6 +40,26 @@ body {
             margin-top: 16px;
             margin-right:auto;
             margin-left: 10px;
+
+            .redirect-link:link {
+                color: #111;
+                text-decoration: none;
+            }
+        
+            .redirect-link:visited {
+                color: #111;
+                text-decoration: none;
+            }
+        
+            .redirect-link:hover{
+                color: #111;
+                text-decoration: none;
+            }
+        
+            .redirect-link:active{
+                color: #111;
+                text-decoration: none;
+            }
         }
 
         .search-div {
