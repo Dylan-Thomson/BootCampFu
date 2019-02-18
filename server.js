@@ -24,7 +24,7 @@ app.set("view engine", "handlebars");
 // Routes
 require("./routes/question-api-routes")(app);
 require("./routes/user-api-routes")(app);
-require("./routes/htmlRoutes")(app);
+require("./routes/html-routes")(app);
 
 const syncOptions = { force: false };
 
