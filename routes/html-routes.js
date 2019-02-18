@@ -9,7 +9,10 @@ module.exports = function(app) {
   });
 
   app.get("/questions", (req, res) => {
-    db.Question.findAll({ include: db.User }).then(dbQuestion => {
+    db.Question.findAll({
+      include: db.User,
+      order: [["updatedAt", "DESC"]]
+    }).then(dbQuestion => {
       res.render("question-list", {
         style: "question-list.css",
         questions: dbQuestion
