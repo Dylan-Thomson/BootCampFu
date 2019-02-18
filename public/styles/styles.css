@@ -1,8 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
-.hidden {
-  display: none;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -27,6 +23,26 @@ body nav .logo {
   margin-top: 16px;
   margin-right: auto;
   margin-left: 10px;
+}
+
+body nav .logo .home-redirect:link {
+  color: #111;
+  text-decoration: none;
+}
+
+body nav .logo .home-redirect:visited {
+  color: #111;
+  text-decoration: none;
+}
+
+body nav .logo .home-redirect:hover {
+  color: #111;
+  text-decoration: none;
+}
+
+body nav .logo .home-redirect:active {
+  color: #111;
+  text-decoration: none;
 }
 
 body nav .search-div {
@@ -70,6 +86,18 @@ body nav .login-div #signup-login-btn {
   cursor: pointer;
 }
 
+body .recentquestions-section {
+  margin-left: 10px;
+  margin-top: 75px;
+}
+
+body .recentquestions-section h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 19.920px;
+  margin-bottom: 19.920px;
+}
+
 body .topic-section {
   margin-top: 75px;
   margin-left: 10px;
@@ -97,44 +125,6 @@ body .topic-section ul li {
   margin-top: 5px;
   text-align: center;
   cursor: pointer;
-}
-
-body .week-section {
-  margin-left: 10px;
-}
-
-body .week-section h1 {
-  font-size: 1.5em;
-  font-weight: bold;
-  margin-top: 19.920px;
-  margin-bottom: 19.920px;
-}
-
-body .week-section ul {
-  padding: 0;
-  list-style-type: none;
-}
-
-body .week-section ul li {
-  display: inline-block;
-  padding: 3px;
-  width: 80px;
-  border: 1px solid #0095ff;
-  background-color: #0095ff;
-  margin-top: 5px;
-  text-align: center;
-  cursor: pointer;
-}
-
-body .topquestions-section {
-  margin-left: 10px;
-}
-
-body .topquestions-section h1 {
-  font-size: 1.5em;
-  font-weight: bold;
-  margin-top: 19.920px;
-  margin-bottom: 19.920px;
 }
 
 body .ask-section {

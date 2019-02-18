@@ -6,21 +6,7 @@ $(".topic-search").on("click", e => {
   const topic = $(this).val();
 
   $.get("/api/questions/" + topic, (req, res) => {
-    //res.sendFile()
-    //will send the question list file dynamically generated for that topic (res.render on the backend)
-  });
-});
-
-//search for a question by week
-
-$(".week-search").on("click", e => {
-  e.preventDefault();
-
-  const week = $(this).val();
-
-  $.get("/api/questions/" + week, (req, res) => {
-    //res.sendFile();
-    //will send the question list file dynamically generated for that week (res.render on the backend)
+    console.log("Searched");
   });
 });
 //submitting a new question
