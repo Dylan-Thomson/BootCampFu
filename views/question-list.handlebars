@@ -8,9 +8,15 @@
         <button id="signup-login-btn"><i class="fas fa-sign-in-alt"></i></button>
     </div>
 </nav>
-
 <div class="question-list">
     <h1>JavaScript Questions</h1> <!--will have templating-->
+    {{!-- JUST TESTING --}}
+    {{#each questions}}
+        <h2>{{title}}</h2> 
+        <p>{{text}}</p>
+        <p>{{User.username}}</p>
+    {{/each}}
+
     <div class="questions">
         <div class="upvotes-div">
             <i class="fas fa-chevron-up fa-lg upvote"></i>
@@ -51,3 +57,4 @@
             </div>
         </div>
 </div>
+

@@ -1,7 +1,6 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  db.findAll();
   // Load index page
   app.get("/", (req, res) => {
     res.render("index", {
@@ -10,8 +9,11 @@ module.exports = function(app) {
   });
 
   app.get("/questions", (req, res) => {
-    res.render("question-list", {
-      style: "question-list.css"
+    db.Question.findAll({ include: db.User }).then(dbQuestion => {
+      res.render("question-list", {
+        style: "question-list.css",
+        questions: dbQuestion
+      });
     });
   });
 };

@@ -1,26 +1,31 @@
 const db = require("../models");
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+  /* 
+  FORMAT FOR QUESTION POST REQUEST
+  {
+  "title": "Help me I'm lost with CSS",
+  "text": "How do I move this div to the left? No matter what I do, it moves to the right...",
+  "UserId": 1
+  }
+  */
+  app.post("/api/questions", (req, res) => {
+    db.Question.create(req.body).then(dbQuestion => {
+      res.json(dbQuestion);
     });
   });
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
-    });
-  });
-
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.json(dbExample);
+  /*
+  FORMAT FOR USER POST REQUEST
+  }
+	"username": "Dylan",
+	"email": "djthomson88@gmail.com",
+	"password": "123456"
+  }
+  */
+  app.post("/api/users", (req, res) => {
+    db.User.create(req.body).then(dbUser => {
+      res.json(dbUser);
     });
   });
 };
