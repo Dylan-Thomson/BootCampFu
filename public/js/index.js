@@ -1,6 +1,6 @@
 //searching for a question by topic
 
-$(".topic-search").on("click", (e) => {
+$(".topic-search").on("click", e => {
   e.preventDefault();
 
   const topic = $(this).val();
@@ -13,7 +13,7 @@ $(".topic-search").on("click", (e) => {
 
 //search for a question by week
 
-$(".week-search").on("click", (e) => {
+$(".week-search").on("click", e => {
   e.preventDefault();
 
   const week = $(this).val();
@@ -24,24 +24,23 @@ $(".week-search").on("click", (e) => {
   });
 });
 //submitting a new question
-$("#submit-custom-question-btn").on("click", (e) => {
+$("#submit-custom-question-btn").on("click", e => {
   e.preventDefault();
 
   const questionTitle = $("#question-title").val();
   const questionTopic = $("#question-topic").val();
   const questionWeek = $("#question-week").val();
   const questionBody = $("#question-body").val();
-  
+
   const newQuestion = {
-    "title": questionTitle,
-    "topic": questionTopic,
-    "week": questionWeek,
-    "text": questionBody
-  }
-  
+    title: questionTitle,
+    topic: questionTopic,
+    week: questionWeek,
+    text: questionBody
+  };
+
   $.post("/api/questions", newQuestion).then(function(data) {
     console.log("it was posted");
     //generate post on new questionpage
   });
-
 });
