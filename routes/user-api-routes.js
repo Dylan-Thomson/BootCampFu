@@ -33,4 +33,14 @@ module.exports = function(app) {
       res.json(dbUser);
     });
   });
+
+  app.delete("/api/users/:id", (req, res) => {
+    db.User.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(dbUser => {
+      res.json(dbUser);
+    });
+  });
 };

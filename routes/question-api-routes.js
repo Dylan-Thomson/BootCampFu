@@ -18,7 +18,8 @@ module.exports = function(app) {
 
   app.get("/api/questions", (req, res) => {
     db.Question.findAll({
-      include: [db.User]
+      include: [db.User],
+      order: [["updatedAt", "DESC"]]
     }).then(dbQuestion => {
       res.json(dbQuestion);
     });
@@ -30,6 +31,28 @@ module.exports = function(app) {
         id: req.params.id
       },
       include: [db.User]
+    }).then(dbQuestion => {
+      res.json(dbQuestion);
+    });
+  });
+
+  app.get("/api/questions/:topic", (req, res) => {
+    db.Question.findAll({
+      where: {
+        topic: req.params.topic
+      },
+      include: [db.User],
+      order: [["updatedAt", "DESC"]]
+    }).then(dbQuestion => {
+      res.json(dbQuestion);
+    });
+  });
+
+  app.delete("/api/questions/:id", (req, res) => {
+    db.Question.destroy({
+      where: {
+        id: req.params.id
+      }
     }).then(dbQuestion => {
       res.json(dbQuestion);
     });
