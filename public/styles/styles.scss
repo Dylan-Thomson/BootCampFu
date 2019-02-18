@@ -17,9 +17,6 @@ $inputpadding: 5px;
     @return map-get($colors, $color-name);
 }
 
-.hidden {
-    display: none;
-}
 body {
     margin: 0;
     padding: 0;
@@ -40,7 +37,28 @@ body {
             margin-top: 16px;
             margin-right:auto;
             margin-left: 10px;
+
+            .home-redirect:link {
+                color: #111;
+                text-decoration: none;
+            }
+        
+            .home-redirect:visited {
+                color: #111;
+                text-decoration: none;
+            }
+        
+            .home-redirect:hover{
+                color: #111;
+                text-decoration: none;
+            }
+        
+            .home-redirect:active{
+                color: #111;
+                text-decoration: none;
+            }
         }
+
 
         .search-div {
             display: inline-block;
@@ -57,7 +75,6 @@ body {
                 margin-right: 5px;
                 padding-left: $inputpadding;
                 outline: none !important;
-
             }
 
             #search-btn {
@@ -87,6 +104,18 @@ body {
         }
     }
 
+    .recentquestions-section {
+        margin-left: 10px;
+        margin-top: 75px;
+
+        h1 {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 19.920px;
+            margin-bottom: 19.920px;
+        }
+    }
+
     .topic-section {
         margin-top: 75px;
         margin-left: 10px;
@@ -113,46 +142,6 @@ body {
                 text-align: center;
                 cursor: pointer;
             }
-        }
-    }
-
-    .week-section {
-        margin-left: 10px;
-
-      
-        h1 {
-            font-size: 1.5em;
-            font-weight: bold;
-            margin-top: 19.920px;
-            margin-bottom: 19.920px;
-        }
-        
-
-        ul {
-            padding: 0;
-            list-style-type: none;
-   
-            li {
-                display: inline-block;
-                padding: 3px;
-                width: 80px;
-                border: 1px solid color(button2);
-                background-color: color(button2);
-                margin-top: 5px;
-                text-align: center;
-                cursor: pointer;
-            }
-        }
-    }
-
-    .topquestions-section {
-        margin-left: 10px;
-
-        h1 {
-            font-size: 1.5em;
-            font-weight: bold;
-            margin-top: 19.920px;
-            margin-bottom: 19.920px;
         }
     }
 
