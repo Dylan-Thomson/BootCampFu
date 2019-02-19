@@ -17,10 +17,27 @@ $inputpadding: 5px;
     @return map-get($colors, $color-name);
 }
 
+$tablet: 768px;
+$desktop: 920px;
+
+@mixin tablet {
+    @media (min-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: "Roboto Condensed", sans-serif;
+    display: grid;
+    justify-items: center;
 
     nav {
         position: fixed;
@@ -59,6 +76,31 @@ body {
             }
         }
 
+        #mobile {
+
+            @include tablet {
+                display: none;
+            }
+
+            @include desktop {
+                display: none;
+            }
+        }
+
+        #desktop {
+
+            display: none;
+
+            @include tablet {
+                display: block;
+            }
+
+            @include desktop {
+                display: block;
+            }
+
+        }
+
 
         .search-div {
             display: inline-block;
@@ -75,6 +117,7 @@ body {
                 margin-right: 5px;
                 padding-left: $inputpadding;
                 outline: none !important;
+                font-family: "Roboto Condensed", sans-serif;
             }
 
             #search-btn {
@@ -83,6 +126,7 @@ body {
                 width: 28px;
                 border-radius: 10px;
                 background-color: color(button1);
+                outline: none !important;
                 cursor: pointer;
             }
         }
@@ -99,32 +143,48 @@ body {
                 width: 28px;
                 border-radius: 10px;
                 background-color: color(button1);
+                outline: none !important;
                 cursor: pointer;
             }
         }
     }
 
     .recentquestions-section {
-        margin-left: 10px;
-        margin-top: 75px;
+        margin-top: 60px;
+        width: 90%;
+
+        @include tablet {
+            width: 75%;
+        }
 
         h1 {
             font-size: 1.5em;
             font-weight: bold;
             margin-top: 19.920px;
             margin-bottom: 19.920px;
+
+            @include tablet {
+                text-align: center;
+            }
         }
     }
 
     .topic-section {
-        margin-top: 75px;
-        margin-left: 10px;
+        width: 90%;
+
+        @include tablet {
+            width: 75%;
+        }
 
         h1 {
             font-size: 1.5em;
             font-weight: bold;
             margin-top: 19.920px;
             margin-bottom: 19.920px;
+
+            @include tablet {
+                text-align: center;
+            }
         }
 
         ul {
@@ -146,13 +206,21 @@ body {
     }
 
     .ask-section {
-        margin-left: 10px;
+        width: 90%;
+        
+        @include tablet {
+            width: 75%;
+        }
 
         h1 {
             font-size: 1.5em;
             font-weight: bold;
             margin-top: 19.920px;
             margin-bottom: 19.920px;
+
+            @include tablet {
+                text-align: center;
+            }
         }
 
         .form-para {
@@ -160,7 +228,7 @@ body {
             #question-title {
                 margin-left: 10px;
                 margin-bottom: 16px;
-                width: 250px;
+                width: 200px;
                 height: $inputheight;
                 border-radius: $inputborderradius;
                 border: 1px solid color(input-border);
@@ -216,6 +284,11 @@ body {
                 cursor: pointer;
             }
         }
+    }
+
+    footer {
+        margin-top: 60px;
+        font-size: 10px;
     }
 }
 

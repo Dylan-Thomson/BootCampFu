@@ -25,6 +25,54 @@ body nav .logo {
   margin-left: 10px;
 }
 
+body nav .logo .home-redirect:link {
+  color: #111;
+  text-decoration: none;
+}
+
+body nav .logo .home-redirect:visited {
+  color: #111;
+  text-decoration: none;
+}
+
+body nav .logo .home-redirect:hover {
+  color: #111;
+  text-decoration: none;
+}
+
+body nav .logo .home-redirect:active {
+  color: #111;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  body nav #mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 920px) {
+  body nav #mobile {
+    display: none;
+  }
+}
+
+body nav #desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  body nav #desktop {
+    display: block;
+  }
+}
+
+@media (min-width: 920px) {
+  body nav #desktop {
+    display: block;
+  }
+}
+
 body nav .search-div {
   display: inline-block;
   margin-top: 10px;
@@ -40,6 +88,7 @@ body nav .search-div #search {
   margin-right: 5px;
   padding-left: 5px;
   outline: none !important;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 body nav .search-div #search-btn {
@@ -48,6 +97,7 @@ body nav .search-div #search-btn {
   width: 28px;
   border-radius: 10px;
   background-color: #f48024;
+  outline: none !important;
   cursor: pointer;
 }
 
@@ -63,6 +113,7 @@ body nav .login-div #signup-login-btn {
   width: 28px;
   border-radius: 10px;
   background-color: #f48024;
+  outline: none !important;
   cursor: pointer;
 }
 
@@ -122,5 +173,28 @@ body .question-list .questions .question-content-div .question-body {
 
 body .question-list .questions .question-content-div .author {
   margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  body .question-list .questions .question-content-div {
+    left: 10%;
+    margin-left: 0;
+    margin-top: -32px;
+  }
+  body .question-list .questions .question-content-div .question-title {
+    margin-top: -16px;
+  }
+  body .question-list .questions .question-content-div .question-body {
+    margin-top: 16px;
+  }
+  body .question-list .questions .question-content-div .author {
+    margin-top: 16px;
+  }
+}
+
+body footer {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 10px;
 }
 /*# sourceMappingURL=question-list.css.map */
