@@ -3,7 +3,7 @@ const db = require("../models");
 module.exports = function(app) {
   // Requires UserId in req.body
   app.post("/api/questions/:questionId/upvotes", (req, res) => {
-    isLikedByUser(req.body.UserId, req.params.questionId).then(isLiked => {
+    isUpvotedByUser(req.body.UserId, req.params.questionId).then(isLiked => {
       if (isLiked) {
         res.send(false);
       } else {
@@ -30,53 +30,12 @@ module.exports = function(app) {
     });
   });
 
-  function isLikedByUser(userId, questionId) {
+  // TODO: Migrate to export file, probably in Models somewhere
+  function isUpvotedByUser(userId, questionId) {
     return db.QuestionUpvotes.count({
       where: { UserId: userId, QuestionId: questionId }
     }).then(count => {
       return count !== 0;
     });
   }
-
-  // app.get("/api/questions", (req, res) => {
-  //   db.Question.findAll({
-  //     include: [db.User, db.Answer],
-  //     order: [["updatedAt", "DESC"]]
-  //   }).then(dbQuestion => {
-  //     res.json(dbQuestion);
-  //   });
-  // });
-
-  // app.get("/api/questions/:id", (req, res) => {
-  //   db.Question.findOne({
-  //     where: {
-  //       id: req.params.id
-  //     },
-  //     include: [db.User]
-  //   }).then(dbQuestion => {
-  //     res.json(dbQuestion);
-  //   });
-  // });
-
-  // app.get("/api/questions/:topic", (req, res) => {
-  //   db.Question.findAll({
-  //     where: {
-  //       topic: req.params.topic
-  //     },
-  //     include: [db.User],
-  //     order: [["updatedAt", "DESC"]]
-  //   }).then(dbQuestion => {
-  //     res.json(dbQuestion);
-  //   });
-  // });
-
-  // app.delete("/api/questions/:id", (req, res) => {
-  //   db.Question.destroy({
-  //     where: {
-  //       id: req.params.id
-  //     }
-  //   }).then(dbQuestion => {
-  //     res.json(dbQuestion);
-  //   });
-  // });
 };
