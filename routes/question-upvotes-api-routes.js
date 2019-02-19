@@ -2,28 +2,40 @@ const db = require("../models");
 
 module.exports = function(app) {
   // Requires UserId in req.body
-  app.post("/api/questions/:questionId/likes", (req, res) => {
-    req.body.QuestionId = req.params.questionId;
-    db.QuestionLikes.create(req.body).then(() => {
-      // res.json(dbQuestionLikes);
-      db.Question.update(
-        { score: db.sequelize.literal("score + 1") },
-        { where: { id: req.params.questionId } }
-      ).then(dbQuestion => {
-        res.json(dbQuestion);
-      });
+  app.post("/api/questions/:questionId/upvotes", (req, res) => {
+    console.log(req.body.UserId);
+    isLikedByUser(req.body.UserId).then(isLiked => {
+      if (isLiked) {
+        res.send(false);
+      } else {
+        req.body.QuestionId = req.params.questionId;
+        db.QuestionUpvotes.create(req.body).then(() => {
+          db.Question.update(
+            { score: db.sequelize.literal("score + 1") },
+            { where: { id: req.params.questionId } }
+          ).then(dbQuestion => {
+            res.json(dbQuestion);
+          });
+        });
+      }
     });
   });
 
-  app.get("/api/questions/:questionId/likes", (req, res) => {
-    db.QuestionLikes.findAll({
+  app.get("/api/questions/:questionId/upvotes", (req, res) => {
+    db.QuestionUpvotes.findAll({
       where: {
         QuestionId: req.params.questionId
       }
-    }).then(dbQuestionLikes => {
-      res.json(dbQuestionLikes);
+    }).then(dbQuestionUpvotes => {
+      res.json(dbQuestionUpvotes);
     });
   });
+
+  function isLikedByUser(id) {
+    return db.QuestionUpvotes.count({ where: { UserId: id } }).then(
+      count => count !== 0
+    );
+  }
 
   // app.get("/api/questions", (req, res) => {
   //   db.Question.findAll({
