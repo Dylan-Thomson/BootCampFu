@@ -19,7 +19,7 @@ module.exports = function(app) {
   app.get("/api/questions", (req, res) => {
     db.Question.findAll({
       include: [db.User, db.Answer],
-      order: [["updatedAt", "DESC"]]
+      order: [["createdAt", "DESC"]]
     }).then(dbQuestion => {
       res.json(dbQuestion);
     });
@@ -42,7 +42,7 @@ module.exports = function(app) {
         topic: req.params.topic
       },
       include: [db.User],
-      order: [["updatedAt", "DESC"]]
+      order: [["createdAt", "DESC"]]
     }).then(dbQuestion => {
       res.json(dbQuestion);
     });
