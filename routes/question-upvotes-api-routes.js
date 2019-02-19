@@ -3,8 +3,7 @@ const db = require("../models");
 module.exports = function(app) {
   // Requires UserId in req.body
   app.post("/api/questions/:questionId/upvotes", (req, res) => {
-    console.log(req.body.UserId);
-    isLikedByUser(req.body.UserId).then(isLiked => {
+    isLikedByUser(req.body.UserId, req.params.questionId).then(isLiked => {
       if (isLiked) {
         res.send(false);
       } else {
@@ -31,10 +30,12 @@ module.exports = function(app) {
     });
   });
 
-  function isLikedByUser(id) {
-    return db.QuestionUpvotes.count({ where: { UserId: id } }).then(
-      count => count !== 0
-    );
+  function isLikedByUser(userId, questionId) {
+    return db.QuestionUpvotes.count({
+      where: { UserId: userId, QuestionId: questionId }
+    }).then(count => {
+      return count !== 0;
+    });
   }
 
   // app.get("/api/questions", (req, res) => {
