@@ -34,6 +34,9 @@ module.exports = function(sequelize, DataTypes) {
     Question.hasMany(models.QuestionUpvotes, {
       onDelete: "cascade"
     });
+    Question.hasMany(models.QuestionDownvotes, {
+      onDelete: "cascade"
+    });
   };
 
   return Question;

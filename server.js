@@ -26,6 +26,7 @@ require("./routes/question-api-routes")(app);
 require("./routes/user-api-routes")(app);
 require("./routes/answer-api-routes")(app);
 require("./routes/question-upvotes-api-routes")(app);
+require("./routes/question-downvotes-api-routes")(app);
 require("./routes/html-routes")(app);
 
 const syncOptions = { force: false };
