@@ -17,6 +17,22 @@ $inputpadding: 5px;
     @return map-get($colors, $color-name);
 }
 
+
+$tablet: 768px;
+$desktop: 920px;
+
+@mixin tablet {
+    @media (min-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -59,6 +75,32 @@ body {
             }
         }
 
+        #mobile {
+
+            @include tablet {
+                display: none;
+            }
+
+            @include desktop {
+                display: none;
+            }
+        }
+
+        #desktop {
+
+            display: none;
+
+            @include tablet {
+                display: block;
+            }
+
+            @include desktop {
+                display: block;
+            }
+
+        }
+
+
         .search-div {
             display: inline-block;
             margin-top: 10px;
@@ -74,6 +116,7 @@ body {
                 margin-right: 5px;
                 padding-left: $inputpadding;
                 outline: none !important;
+                font-family: "Roboto Condensed", sans-serif;
 
             }
 
@@ -83,6 +126,7 @@ body {
                 width: 28px;
                 border-radius: 10px;
                 background-color: color(button1);
+                outline: none !important;
                 cursor: pointer;
             }
         }
@@ -99,6 +143,7 @@ body {
                 width: 28px;
                 border-radius: 10px;
                 background-color: color(button1);
+                outline: none !important;
                 cursor: pointer;
             }
         }
@@ -169,9 +214,33 @@ body {
                 .author {
                     margin-top: 20px;
                 }
+
+                @include tablet {
+                    left: 10%;
+                    margin-left: 0;
+                    margin-top: -32px;
+
+                    .question-title {
+                        margin-top: -16px;
+                    }
+
+                    .question-body {
+                        margin-top: 16px;
+                    }
+    
+                    .author {
+                        margin-top: 16px;
+                    }
+                }
             }
         }
 
 
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 60px;
+        font-size: 10px;
     }
 }
