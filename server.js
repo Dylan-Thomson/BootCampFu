@@ -41,6 +41,10 @@ require("./routes/answer-api-routes")(app);
 require("./routes/question-upvotes-api-routes")(app);
 require("./routes/question-downvotes-api-routes")(app);
 require("./routes/html-routes")(app);
+require("./routes/auth")(app, passport);
+
+const models = require("./models");
+require("./config/passport/passport")(passport, models.User);
 
 const syncOptions = { force: false };
 
