@@ -3,9 +3,10 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", (req, res) => {
+    console.log(req.originalUrl);
     db.Question.findAll({
       include: db.User,
-      order: [["updatedAt", "DESC"]],
+      order: [["createdAt", "DESC"]],
       limit: 3
     }).then(dbQuestion => {
       res.render("index", {
@@ -15,19 +16,20 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/questions/:topic", (req, res) => {
-    console.log(req.params.topic);
+  app.get("/questions/topics/:topic", (req, res) => {
+    console.log(req.originalUrl);
     db.Question.findAll({
       where: {
         topic: req.params.topic
-      }
-      // include: [db.User],
-      // order: [["updatedAt", "DESC"]]
+      },
+      include: [db.User],
+      order: [["createdAt", "DESC"]]
     }).then(dbQuestion => {
       console.log(dbQuestion);
       res.render("question-list", {
         style: "question-list.css",
-        topic: dbQuestion
+        questions: dbQuestion,
+        topic: req.params.topic
       });
     });
   });

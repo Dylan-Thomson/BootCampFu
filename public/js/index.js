@@ -5,10 +5,14 @@ $(".topic-search").on("click", function(e) {
   const topic = parseInt($(this).data("topic"));
   console.log(topic);
 
-  $.get("/questions/" + topic, (req, res) => {
+  $.get("/");
+  $.get("/questions/topics/" + topic, (req, res) => {
     console.log("Searched");
     console.log(res);
+    console.log(req);
   });
+
+  // $.get("/questions/" + topic);
 });
 //submitting a new question
 $("#submit-custom-question-btn").on("click", e => {
@@ -26,7 +30,7 @@ $("#submit-custom-question-btn").on("click", e => {
     text: questionBody
   };
 
-  $.post("/api/questions", newQuestion).then(function(data) {
+  $.post("/api/questions", newQuestion).then(function() {
     console.log("it was posted");
     //generate post on new questionpage
   });

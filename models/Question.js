@@ -11,7 +11,8 @@ module.exports = function(sequelize, DataTypes) {
     score: { type: DataTypes.INTEGER, defaultValue: 0 },
     topic: {
       type: DataTypes.ENUM(
-        "HTML/CSS",
+        "HTML",
+        "CSS",
         "JavaScript",
         "Firebase",
         "Node",
