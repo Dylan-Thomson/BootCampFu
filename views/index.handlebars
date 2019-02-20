@@ -1,15 +1,3 @@
-<nav>
-    <div class="logo" id="mobile"><a href="/" class="home-redirect">BCF</a></div>
-    <div class="logo" id="desktop"><a href="/" class="home-redirect">BootCampFu</a></div>
-    <div class="search-div">
-        <input id="search" placeholder="Search">
-        <button id="search-btn"><i class="fas fa-search"></i></button>
-    </div>
-    <div class="login-div">
-        <button id="signup-login-btn"><i class="fas fa-sign-in-alt"></i></button>
-    </div>
-</nav>
-
 <section class="recentquestions-section">
     <h1>Recent Questions</h1>
     {{#each recentQuestions}}
@@ -25,13 +13,13 @@
     <h1>Browse Questions by Topic</h1>
     <ul>
         {{!-- <li class="topic-search" data-topic="1">HTML/CSS</li> --}}
-        <a href="questions/topics/html"><li>HTML</li></a>
-        <a href="questions/topics/css"><li>CSS</li></a>
-        <a href="questions/topics/javascript"><li>JavaScript</li></a>
-        <a href="questions/topics/firebase"><li>Firebase</li></a>
-        <a href="questions/topics/node"><li>Node</li></a>
-        <a href="questions/topics/express"><li>Express</li></a>
-        <a href="questions/topics/react"><li>React</li></a>
+        <a href="questions/topics/html" class="topic-link"><li>HTML</li></a>
+        <a href="questions/topics/css" class="topic-link"><li>CSS</li></a>
+        <a href="questions/topics/javascript" class="topic-link"><li>JavaScript</li></a>
+        <a href="questions/topics/firebase" class="topic-link"><li>Firebase</li></a>
+        <a href="questions/topics/node" class="topic-link"><li>Node</li></a>
+        <a href="questions/topics/express" class="topic-link"><li>Express</li></a>
+        <a href="questions/topics/react" class="topic-link"><li>React</li></a>
     </ul>
 </section>
 
