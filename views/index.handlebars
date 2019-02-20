@@ -12,17 +12,24 @@
 
 <section class="recentquestions-section">
     <h1>Recent Questions</h1>
+    {{#each recentQuestions}}
+        <h2>{{title}}</h2> 
+        <p>{{topic}}</p>
+        <p>{{text}}</p>
+        <p>{{User.username}}</p>
+        <p>{{createdAt}}</p> 
+    {{/each}}
 </section>
 
 <section class="topic-section">
     <h1>Browse Questions by Topic</h1>
     <ul>
-        <li class="topic-search">HTML/CSS</li>
-        <li class="topic-search">JavaScript</li>
-        <li class="topic-search">Node</li>
-        <li class="topic-search">Firebase</li>
-        <li class="topic-search">Express</li>
-        <li class="topic-search">React</li>
+        <li class="topic-search" data-topic="1">HTML/CSS</li>
+        <li class="topic-search" data-topic="2">JavaScript</li>
+        <li class="topic-search" data-topic="3">Firebase</li>
+        <li class="topic-search" data-topic="4">Node</li>
+        <li class="topic-search" data-topic="5">Express</li>
+        <li class="topic-search" data-topic="6">React</li>
     </ul>
 </section>
 
