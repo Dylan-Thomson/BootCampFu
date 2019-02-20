@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+$colors: (
+    nav: #fafafb,
+    primary: #fff,
+    border: #0095ff,
+    button1: #f48024,
+    button2: #0095ff,
+    input-border: lightgrey
+);
+
+$inputheight: 25px;
+$inputborderradius: 10px;
+$inputpadding: 5px;
+
+@function color ($color-name) {
+    @return map-get($colors, $color-name);
+}
+
+$tablet: 768px;
+$desktop: 920px;
+
+@mixin tablet {
+    @media (min-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+form {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+
+
+    h1 {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-top: 19.920px;
+        margin-bottom: 19.920px;
+
+        @include tablet {
+            text-align: center;
+        }
+    }
+
+    .form-para {
+
+        #email-signup {
+            margin-left: 10px;
+            margin-bottom: 16px;
+            width: 200px;
+            height: $inputheight;
+            border-radius: $inputborderradius;
+            border: 1px solid color(input-border);
+            outline: none !important;
+            padding-left: $inputpadding;
+            font-family: "Roboto Condensed", sans-serif;
+        }
+        
+        #username-signup {
+            margin-left: 10px;
+            margin-bottom: 16px;
+            width: 200px;
+            height: $inputheight;
+            border-radius: $inputborderradius;
+            border: 1px solid color(input-border);
+            outline: none !important;
+            padding-left: $inputpadding;
+            font-family: "Roboto Condensed", sans-serif;
+        }
+
+
+        #password-signup {
+            margin-left: 10px;
+            margin-bottom: 16px;
+            width: 200px;
+            height: $inputheight;
+            border-radius: $inputborderradius;
+            border: 1px solid color(input-border);
+            outline: none !important;
+            padding-left: $inputpadding;
+            font-family: "Roboto Condensed", sans-serif;
+        }
+
+        #signup-btn {
+            height: 30px;
+            width: 100px;
+            border: none;
+            font-family: "Roboto Condensed", sans-serif;
+            background-color: color(button1);
+            cursor: pointer;
+        }
+    }
+    
+}
