@@ -11,9 +11,16 @@ module.exports = function(app) {
   }
   */
   app.post("/api/questions", (req, res) => {
-    db.Question.create(req.body).then(dbQuestion => {
-      res.json(dbQuestion);
-    });
+    console.log(req.user);
+    if (req.user) {
+      req.body.UserId = req.user.id;
+      db.Question.create(req.body).then(dbQuestion => {
+        console.log(dbQuestion.topic);
+        res.redirect("/");
+      });
+    } else {
+      res.redirect("/signin");
+    }
   });
 
   app.get("/api/questions", (req, res) => {

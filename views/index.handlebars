@@ -37,25 +37,36 @@
 
 <section class="ask-section">
     <h1>Ask A Question</h1>
-    <p class="form-para">
-        Title:
-        <input id="question-title" placeholder="Need help with CSS!">
-    </p>
-    <p class="form-para">
-        Topic:
-        <input id="question-topic" placeholder="e.g. Java">
-    </p>
-    <p class="form-para">
-        Week Number:
-        <input id="question-week" placeholder="e.g. Week 1">
-    </p>
-    <p class="form-para">
-        Question:<br>
-        <textarea id="question-body" placeholder="e.g. I'm going to cry"></textarea>
-    </p>
-    <p class="form-para">
-        <button type="submit" id="submit-custom-question-btn">Help!!!</button>
-    </p>
+    <form action="/api/questions" method="POST">
+        <p class="form-para">
+            Title:
+            <input id="question-title" name="title" placeholder="Need help with CSS!">
+        </p>
+        <p class="form-para">
+            Topic:
+            {{!-- <input id="question-topic" placeholder="e.g. Java"> --}}
+            <select name="topic" id="question-topic">
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="javascript">JavaScript</option>
+                <option value="firebase">Firebase</option>
+                <option value="node">Node</option>
+                <option value="Express">Express</option>
+                <option value="React">React</option>
+            </select>
+        </p>
+        {{!-- <p class="form-para">
+            Week Number:
+            <input id="question-week" placeholder="e.g. Week 1">
+        </p> --}}
+        <p class="form-para">
+            Question:<br>
+            <textarea id="question-body" name="text" placeholder="e.g. I'm going to cry"></textarea>
+        </p>
+        <p class="form-para">
+            <button type="submit" value="Submit" id="submit-custom-question-btn">Help!!!</button>
+        </p>
+    </form>
 </section>
 
 <footer>
