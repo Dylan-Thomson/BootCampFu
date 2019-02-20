@@ -15,7 +15,11 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    lastLogin: DataTypes.DATE
+    lastLogin: DataTypes.DATE,
+    status: {
+      type: DataTypes.ENUM("active", "inactive"),
+      defaultValue: "active"
+    }
   });
 
   User.associate = models => {
