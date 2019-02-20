@@ -29,7 +29,7 @@ module.exports = function(app) {
       res.render("question-list", {
         style: "question-list.css",
         questions: dbQuestion,
-        topic: "Html"
+        topic: req.params.topic
       });
     });
   });

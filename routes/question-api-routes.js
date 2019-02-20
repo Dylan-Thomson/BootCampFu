@@ -44,6 +44,7 @@ module.exports = function(app) {
       include: [db.User],
       order: [["createdAt", "DESC"]]
     }).then(dbQuestion => {
+      console.log(dbQuestion);
       res.json(dbQuestion);
     });
   });
