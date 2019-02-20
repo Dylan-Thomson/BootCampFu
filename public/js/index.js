@@ -1,12 +1,13 @@
 //searching for a question by topic
-
-$(".topic-search").on("click", e => {
+$(".topic-search").on("click", function(e) {
   e.preventDefault();
 
-  const topic = $(this).val();
+  const topic = parseInt($(this).data("topic"));
+  console.log(topic);
 
-  $.get("/api/questions/" + topic, (req, res) => {
+  $.get("/questions/" + topic, (req, res) => {
     console.log("Searched");
+    console.log(res);
   });
 });
 //submitting a new question

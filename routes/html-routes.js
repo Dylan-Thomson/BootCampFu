@@ -3,20 +3,31 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", (req, res) => {
-    res.render("index", {
-      style: "styles.css"
+    db.Question.findAll({
+      include: db.User,
+      order: [["updatedAt", "DESC"]],
+      limit: 3
+    }).then(dbQuestion => {
+      res.render("index", {
+        style: "styles.css",
+        recentQuestions: dbQuestion
+      });
     });
   });
 
-  app.get("/questions", (req, res) => {
+  app.get("/questions/:topic", (req, res) => {
+    console.log(req.params.topic);
     db.Question.findAll({
-      include: [db.User, db.Answer],
-      order: [["updatedAt", "DESC"]]
+      where: {
+        topic: req.params.topic
+      }
+      // include: [db.User],
+      // order: [["updatedAt", "DESC"]]
     }).then(dbQuestion => {
       console.log(dbQuestion);
       res.render("question-list", {
         style: "question-list.css",
-        questions: dbQuestion
+        topic: dbQuestion
       });
     });
   });

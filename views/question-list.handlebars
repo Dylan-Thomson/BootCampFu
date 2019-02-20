@@ -10,20 +10,8 @@
     </div>
 </nav>
 <div class="question-list">
-    <h1>JavaScript Questions</h1> <!--will have templating-->
+    <h1>{{topic}}</h1> <!--will have templating-->
     {{!-- JUST TESTING --}}
-    {{#each questions}}
-        <h2>{{title}}</h2> 
-        <p>{{topic}}</p>
-        <p>{{text}}</p>
-        <p>{{User.username}}</p>
-        <p>{{updatedAt}}</p>
-
-        <br>
-        {{#each Answers}}
-            <p>{{text}}</p>
-        {{/each}}
-    {{/each}}
 
     <div class="questions">
         <div class="upvotes-div">
