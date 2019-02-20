@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
+form {
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  justify-items: center;
+}
+
+form h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 19.920px;
+  margin-bottom: 19.920px;
+}
+
+@media (min-width: 768px) {
+  form h1 {
+    text-align: center;
+  }
+}
+
+form .form-para #email-signin {
+  margin-left: 10px;
+  margin-bottom: 16px;
+  width: 200px;
+  height: 25px;
+  border-radius: 10px;
+  border: 1px solid lightgrey;
+  outline: none !important;
+  padding-left: 5px;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+form .form-para #password-signin {
+  margin-left: 10px;
+  margin-bottom: 16px;
+  width: 200px;
+  height: 25px;
+  border-radius: 10px;
+  border: 1px solid lightgrey;
+  outline: none !important;
+  padding-left: 5px;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+form .form-para #signin-btn {
+  height: 30px;
+  width: 100px;
+  border: none;
+  font-family: "Roboto Condensed", sans-serif;
+  background-color: #f48024;
+  cursor: pointer;
+}
+/*# sourceMappingURL=signin.css.map */

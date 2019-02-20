@@ -1,8 +1,14 @@
-{{!-- TEMPORARY FOR TESTING/DEV --}}
 <form id="signin" name="signin" method="post" action="signin">
-    <label for="email">Email Address</label>
-    <input class="text" name="email" type="text" />
-    <label for="password">Password</label>
-    <input name="password" type="password" />
-    <input class="btn" type="submit" value="Sign In" />
+    <h1>Sign In</h1>
+    <p class="form-para">
+        Email Address:
+        <input class="text" name="email" type="text" id="email-signin" placeholder="e.g. john@amazingcoder.com" />
+    </p>
+    <p class="form-para">
+        Password:
+        <input name="password" type="password" id="password-signin"/>
+    </p>
+    <p class="form-para">
+       <input class="btn" type="submit" value="Sign In" id="signin-btn" />
+    </p>
 </form>
