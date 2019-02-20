@@ -1,6 +1,8 @@
 require("dotenv").config();
 const express = require("express");
 const exphbs = require("express-handlebars");
+const passport = require("passport");
+const session = require("express-session");
 
 const db = require("./models");
 
@@ -11,6 +13,17 @@ const PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
+
+// Passport
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: true,
+    saveUnitialized: true
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Handlebars
 app.engine(
