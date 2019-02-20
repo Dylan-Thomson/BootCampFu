@@ -10,7 +10,10 @@
     </div>
 </nav>
 <div class="question-list">
-    <h1>{{topic}}</h1> <!--will have templating-->
+    {{#each questions}}
+    <h1>wtf {{topic}}</h1>
+    {{/each}}
+    <h1>wtf {{topic}}</h1> <!--will have templating-->
     {{!-- JUST TESTING --}}
 
     <div class="questions">

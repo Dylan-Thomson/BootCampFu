@@ -36,7 +36,7 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/questions/:topic", (req, res) => {
+  app.get("/api/questions/topics/:topic", (req, res) => {
     db.Question.findAll({
       where: {
         topic: req.params.topic
