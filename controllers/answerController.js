@@ -23,3 +23,14 @@ answerController.getAnswers = (req, res) => {
     res.json(dbAnswer);
   });
 };
+
+answerController.getAnswerById = (req, res) => {
+  db.Answer.findOne({
+    where: {
+      id: req.params.id
+    },
+    include: [db.User]
+  }).then(dbAnswer => {
+    res.json(dbAnswer);
+  });
+};
