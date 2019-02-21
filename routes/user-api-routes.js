@@ -1,14 +1,6 @@
 const db = require("../models");
 
 module.exports = function(app) {
-  /*
-  FORMAT FOR USER POST REQUEST
-  }
-    "username": "Dylan",
-    "email": "djthomson88@gmail.com",
-    "password": "123456"
-  }
-  */
   app.post("/api/users", (req, res) => {
     db.User.create(req.body).then(dbUser => {
       res.json(dbUser);
@@ -17,7 +9,8 @@ module.exports = function(app) {
 
   app.get("/api/users", (req, res) => {
     db.User.findAll({
-      include: [db.Question]
+      include: [db.Question],
+      attributes: ["username", "email", "status"]
     }).then(dbUser => {
       res.json(dbUser);
     });
