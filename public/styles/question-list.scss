@@ -40,10 +40,12 @@ body {
 
     nav {
         position: fixed;
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
         top: 0;
         width: 100%;
-        height: 50px;
+        height: 85px;
+        padding-bottom: 10px;
         background-color: color(nav);
         border-top: 2px solid color(border);
         border-bottom: 2px solid rgb(233, 231, 231);
@@ -100,30 +102,17 @@ body {
 
         }
 
-
-        .search-div {
-            display: inline-block;
-            margin-top: 10px;
+        .login-div {
             margin-left: auto;
             margin-right: 10px;
-        
 
-            #search {
-                border: 1px solid color(input-border);
-                border-radius: $inputborderradius;
-                width: 150px;
-                height: $inputheight;
-                margin-right: 5px;
-                padding-left: $inputpadding;
-                outline: none !important;
-                font-family: "Roboto Condensed", sans-serif;
-
-            }
-
-            #search-btn {
+            .nav-button {
+                position: relative;
                 border: none;
                 height: 28px;
-                width: 28px;
+                width: 60px;
+                margin-top: 10px;
+                margin-left: 5px;
                 border-radius: 10px;
                 background-color: color(button1);
                 outline: none !important;
@@ -131,16 +120,28 @@ body {
             }
         }
 
-        .login-div {
-
+        .search-div {
             margin-top: 10px;
-            margin-right: 10px;
+            margin-left: auto;
+            grid-column: 1/3;
+        
 
-            #signup-login-btn {
-                position: relative;
+            #search {
+                border: 1px solid color(input-border);
+                border-radius: $inputborderradius;
+                width: 225px;
+                height: $inputheight;
+                margin-right: 10px;
+                padding-left: $inputpadding;
+                outline: none !important;
+                font-family: "Roboto Condensed", sans-serif;
+            }
+
+            #search-btn {
                 border: none;
-                height: 28px;
-                width: 28px;
+                height: 30px;
+                width: 45px;
+                margin-right: 10px;
                 border-radius: 10px;
                 background-color: color(button1);
                 outline: none !important;
