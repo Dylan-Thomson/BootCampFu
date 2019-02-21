@@ -17,7 +17,6 @@ module.exports = function(app) {
   });
 
   app.get("/questions/topics/:topic", (req, res) => {
-    console.log(req.originalUrl);
     db.Question.findAll({
       where: {
         topic: req.params.topic
@@ -25,11 +24,24 @@ module.exports = function(app) {
       include: [db.User],
       order: [["createdAt", "DESC"]]
     }).then(dbQuestion => {
-      console.log(dbQuestion);
       res.render("question-list", {
         style: "question-list.css",
         questions: dbQuestion,
         topic: req.params.topic
+      });
+    });
+  });
+
+  app.get("/questions/:id", (req, res) => {
+    db.Question.findOne({
+      where: {
+        id: req.params.id
+      },
+      include: [db.User, db.Answer]
+    }).then(dbQuestion => {
+      res.render("question", {
+        style: "question.css",
+        question: dbQuestion
       });
     });
   });

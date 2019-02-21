@@ -1,0 +1,9 @@
+<h2>{{question.title}}</h2> 
+<p>{{question.topic}}</p>
+<p>{{question.text}}</p>
+<p>{{question.User.username}}</p>
+<p>{{question.createdAt}}</p> 
+
+{{#each question.answer}}
+  <p>{{text}}</p>
+{{/each}}
