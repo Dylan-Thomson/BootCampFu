@@ -1,18 +1,18 @@
-let authRoutes = module.exports;
+let authController = module.exports;
 
-authRoutes.signup = (req, res) => {
+authController.signup = (req, res) => {
   res.render("signup", { style: "signup.css" });
 };
 
-authRoutes.signin = (req, res) => {
+authController.signin = (req, res) => {
   res.render("signin", { style: "signin.css" });
 };
 
-authRoutes.dashboard = (req, res) => {
-  res.render("dashboard");
+authController.dashboard = (req, res) => {
+  res.render("dashboard", { style: "dashboard.css" });
 };
 
-authRoutes.logout = (req, res) => {
+authController.logout = (req, res) => {
   req.session.destroy(() => {
     res.redirect("/");
   });
