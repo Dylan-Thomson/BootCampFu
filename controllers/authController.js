@@ -9,7 +9,7 @@ authController.signin = (req, res) => {
 };
 
 authController.dashboard = (req, res) => {
-  res.render("dashboard");
+  res.render("dashboard", { style: "dashboard.css" });
 };
 
 authController.logout = (req, res) => {
