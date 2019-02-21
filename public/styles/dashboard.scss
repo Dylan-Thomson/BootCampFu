@@ -165,54 +165,5 @@ body {
                 text-align: center;
             }
         }
-
-        .form-para {
-
-            #email-signup {
-                margin-left: 10px;
-                margin-bottom: 16px;
-                width: 200px;
-                height: $inputheight;
-                border-radius: $inputborderradius;
-                border: 1px solid color(input-border);
-                outline: none !important;
-                padding-left: $inputpadding;
-                font-family: "Roboto Condensed", sans-serif;
-            }
-            
-            #username-signup {
-                margin-left: 10px;
-                margin-bottom: 16px;
-                width: 200px;
-                height: $inputheight;
-                border-radius: $inputborderradius;
-                border: 1px solid color(input-border);
-                outline: none !important;
-                padding-left: $inputpadding;
-                font-family: "Roboto Condensed", sans-serif;
-            }
-
-
-            #password-signup {
-                margin-left: 10px;
-                margin-bottom: 16px;
-                width: 200px;
-                height: $inputheight;
-                border-radius: $inputborderradius;
-                border: 1px solid color(input-border);
-                outline: none !important;
-                padding-left: $inputpadding;
-                font-family: "Roboto Condensed", sans-serif;
-            }
-
-            #signup-btn {
-                height: 30px;
-                width: 100px;
-                border: none;
-                font-family: "Roboto Condensed", sans-serif;
-                background-color: color(button1);
-                cursor: pointer;
-            }
-        }
-    }  
+    }
 }

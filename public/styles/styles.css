@@ -12,11 +12,11 @@ body nav {
   position: fixed;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
   top: 0;
   width: 100%;
-  height: 90px;
+  height: 85px;
   padding-bottom: 10px;
   background-color: #fafafb;
   border-top: 2px solid #0095ff;
@@ -78,18 +78,38 @@ body nav #desktop {
   }
 }
 
+body nav .login-div {
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+body nav .login-div .nav-button {
+  position: relative;
+  border: none;
+  height: 28px;
+  width: 60px;
+  margin-top: 10px;
+  margin-left: 5px;
+  border-radius: 10px;
+  background-color: #f48024;
+  outline: none !important;
+  cursor: pointer;
+}
+
 body nav .search-div {
   margin-top: 10px;
   margin-left: auto;
-  margin-right: 10px;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
 }
 
 body nav .search-div #search {
   border: 1px solid lightgrey;
   border-radius: 10px;
-  width: 100px;
+  width: 225px;
   height: 25px;
-  margin-right: 5px;
+  margin-right: 10px;
   padding-left: 5px;
   outline: none !important;
   font-family: "Roboto Condensed", sans-serif;
@@ -99,25 +119,6 @@ body nav .search-div #search-btn {
   border: none;
   height: 30px;
   width: 45px;
-  border-radius: 10px;
-  background-color: #f48024;
-  outline: none !important;
-  cursor: pointer;
-}
-
-body nav .login-div {
-  margin-top: 20px;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-column: 1/3;
-  text-align: center;
-}
-
-body nav .login-div .nav-button {
-  position: relative;
-  border: none;
-  height: 28px;
-  width: 70px;
   margin-right: 10px;
   border-radius: 10px;
   background-color: #f48024;
