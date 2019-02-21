@@ -1,5 +1,129 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
-form {
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+body nav {
+  position: fixed;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+  top: 0;
+  width: 100%;
+  height: 85px;
+  padding-bottom: 10px;
+  background-color: #fafafb;
+  border-top: 2px solid #0095ff;
+  border-bottom: 2px solid #e9e7e7;
+  z-index: 999;
+}
+
+body nav .logo {
+  margin-top: 16px;
+  margin-right: auto;
+  margin-left: 10px;
+}
+
+body nav .logo .home-redirect:link {
+  color: #111;
+  text-decoration: none;
+}
+
+body nav .logo .home-redirect:visited {
+  color: #111;
+  text-decoration: none;
+}
+
+body nav .logo .home-redirect:hover {
+  color: #111;
+  text-decoration: none;
+}
+
+body nav .logo .home-redirect:active {
+  color: #111;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  body nav #mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 920px) {
+  body nav #mobile {
+    display: none;
+  }
+}
+
+body nav #desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  body nav #desktop {
+    display: block;
+  }
+}
+
+@media (min-width: 920px) {
+  body nav #desktop {
+    display: block;
+  }
+}
+
+body nav .login-div {
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+body nav .login-div .nav-button {
+  position: relative;
+  border: none;
+  height: 28px;
+  width: 60px;
+  margin-top: 10px;
+  margin-left: 5px;
+  border-radius: 10px;
+  background-color: #f48024;
+  outline: none !important;
+  cursor: pointer;
+}
+
+body nav .search-div {
+  margin-top: 10px;
+  margin-left: auto;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+}
+
+body nav .search-div #search {
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  width: 225px;
+  height: 25px;
+  margin-right: 10px;
+  padding-left: 5px;
+  outline: none !important;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+body nav .search-div #search-btn {
+  border: none;
+  height: 30px;
+  width: 45px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: #f48024;
+  outline: none !important;
+  cursor: pointer;
+}
+
+body form {
   display: -ms-grid;
   display: grid;
   -ms-flex-line-pack: center;
@@ -7,7 +131,7 @@ form {
   justify-items: center;
 }
 
-form h1 {
+body form h1 {
   font-size: 1.5em;
   font-weight: bold;
   margin-top: 19.920px;
@@ -15,12 +139,12 @@ form h1 {
 }
 
 @media (min-width: 768px) {
-  form h1 {
+  body form h1 {
     text-align: center;
   }
 }
 
-form .form-para #email-signin {
+body form .form-para #email-signin {
   margin-left: 10px;
   margin-bottom: 16px;
   width: 200px;
@@ -32,7 +156,7 @@ form .form-para #email-signin {
   font-family: "Roboto Condensed", sans-serif;
 }
 
-form .form-para #password-signin {
+body form .form-para #password-signin {
   margin-left: 10px;
   margin-bottom: 16px;
   width: 200px;
@@ -44,7 +168,7 @@ form .form-para #password-signin {
   font-family: "Roboto Condensed", sans-serif;
 }
 
-form .form-para #signin-btn {
+body form .form-para #signin-btn {
   height: 30px;
   width: 100px;
   border: none;

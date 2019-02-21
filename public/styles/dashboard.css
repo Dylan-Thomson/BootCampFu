@@ -123,84 +123,24 @@ body nav .search-div #search-btn {
   cursor: pointer;
 }
 
-body .question-list {
-  margin-top: 75px;
+body form {
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  justify-items: center;
 }
 
-body .question-list h1 {
+body form h1 {
   font-size: 1.5em;
   font-weight: bold;
   margin-top: 19.920px;
   margin-bottom: 19.920px;
-  text-align: center;
-}
-
-body .question-list .questions {
-  border-top: 2px solid #e9e7e7;
-  border-bottom: 2px solid #e9e7e7;
-  padding: 10px;
-  height: 150px;
-  position: relative;
-}
-
-body .question-list .questions .upvotes-div {
-  position: absolute;
-  top: 50%;
-  margin-top: -39.5px;
-}
-
-body .question-list .questions .upvotes-div .upvote {
-  cursor: pointer;
-}
-
-body .question-list .questions .upvotes-div .upvotes-num {
-  font-size: 35px;
-}
-
-body .question-list .questions .upvotes-div .downvote {
-  cursor: pointer;
-}
-
-body .question-list .questions .question-content-div {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: -80px;
-  margin-top: -40px;
-}
-
-body .question-list .questions .question-content-div .question-title {
-  margin-top: -20px;
-}
-
-body .question-list .questions .question-content-div .question-body {
-  margin-top: 20px;
-}
-
-body .question-list .questions .question-content-div .author {
-  margin-top: 20px;
 }
 
 @media (min-width: 768px) {
-  body .question-list .questions .question-content-div {
-    left: 10%;
-    margin-left: 0;
-    margin-top: -32px;
-  }
-  body .question-list .questions .question-content-div .question-title {
-    margin-top: -16px;
-  }
-  body .question-list .questions .question-content-div .question-body {
-    margin-top: 16px;
-  }
-  body .question-list .questions .question-content-div .author {
-    margin-top: 16px;
+  body form h1 {
+    text-align: center;
   }
 }
-
-body footer {
-  text-align: center;
-  margin-top: 60px;
-  font-size: 10px;
-}
-/*# sourceMappingURL=question-list.css.map */
+/*# sourceMappingURL=dashboard.css.map */
