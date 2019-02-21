@@ -1,21 +1,11 @@
 const db = require("../models");
 
 module.exports = function(app) {
-  /* 
-  FORMAT FOR QUESTION POST REQUEST
-  {
-    "title": "Move div to left",
-    "text": "Why can't I move this div to the left ARRRRGH",
-    "UserId": 1,
-    "topic": 1
-  }
-  */
+  // Posts a question if user is logged in, otherwise redirect to signin page
   app.post("/api/questions", (req, res) => {
-    console.log(req.user);
     if (req.user) {
       req.body.UserId = req.user.id;
-      db.Question.create(req.body).then(dbQuestion => {
-        console.log(dbQuestion.topic);
+      db.Question.create(req.body).then(() => {
         res.redirect("/");
       });
     } else {
@@ -23,6 +13,7 @@ module.exports = function(app) {
     }
   });
 
+  // Get all questions and send json object to client
   app.get("/api/questions", (req, res) => {
     db.Question.findAll({
       include: [db.User, db.Answer],
@@ -32,6 +23,7 @@ module.exports = function(app) {
     });
   });
 
+  // Get question with specific ID, send json to client
   app.get("/api/questions/:id", (req, res) => {
     db.Question.findOne({
       where: {
@@ -43,6 +35,7 @@ module.exports = function(app) {
     });
   });
 
+  // Get questions by topic and send json to client
   app.get("/api/questions/topics/:topic", (req, res) => {
     db.Question.findAll({
       where: {
@@ -51,18 +44,23 @@ module.exports = function(app) {
       include: [db.User],
       order: [["createdAt", "DESC"]]
     }).then(dbQuestion => {
-      console.log(dbQuestion);
       res.json(dbQuestion);
     });
   });
 
+  // Allow user to delete their question
   app.delete("/api/questions/:id", (req, res) => {
-    db.Question.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(dbQuestion => {
-      res.json(dbQuestion);
-    });
+    if (req.user) {
+      db.Question.destroy({
+        where: {
+          id: req.params.id,
+          UserId: req.user.id
+        }
+      }).then(dbQuestion => {
+        res.json(dbQuestion);
+      });
+    } else {
+      res.redirect("/signin");
+    }
   });
 };
