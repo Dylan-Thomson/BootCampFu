@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+$colors: (
+    nav: #fafafb,
+    primary: #fff,
+    border: #0095ff,
+    button1: #f48024,
+    button2: #0095ff,
+    input-border: lightgrey
+);
+
+$inputheight: 25px;
+$inputborderradius: 10px;
+$inputpadding: 5px;
+
+@function color ($color-name) {
+    @return map-get($colors, $color-name);
+}
+
+
+$tablet: 768px;
+$desktop: 920px;
+
+@mixin tablet {
+    @media (min-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    justify-items: center;
+    font-family: "Roboto Condensed", sans-serif;
+
+    @include desktop {
+            background-color: #bababa;
+    }
+
+    nav {
+        position: fixed;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        top: 0;
+        width: 100%;
+        height: 85px;
+        padding-bottom: 10px;
+        background-color: color(nav);
+        border-top: 2px solid color(border);
+        border-bottom: 2px solid rgb(233, 231, 231);
+        z-index: 999;
+    
+        .logo {
+            margin-top: 16px;
+            margin-right:auto;
+            margin-left: 10px;
+
+            .home-redirect:link {
+                color: #111;
+                text-decoration: none;
+            }
+        
+            .home-redirect:visited {
+                color: #111;
+                text-decoration: none;
+            }
+        
+            .home-redirect:hover{
+                color: #111;
+                text-decoration: none;
+            }
+        
+            .home-redirect:active{
+                color: #111;
+                text-decoration: none;
+            }
+        }
+
+        #mobile {
+
+            @include tablet {
+                display: none;
+            }
+
+            @include desktop {
+                display: none;
+            }
+        }
+
+        #desktop {
+
+            display: none;
+
+            @include tablet {
+                display: block;
+            }
+
+            @include desktop {
+                display: block;
+            }
+
+        }
+
+        .login-div {
+            margin-left: auto;
+            margin-right: 10px;
+
+            .nav-button {
+                position: relative;
+                border: none;
+                height: 28px;
+                width: 60px;
+                margin-top: 10px;
+                margin-left: 5px;
+                border-radius: 10px;
+                background-color: color(button1);
+                outline: none !important;
+                cursor: pointer;
+            }
+        }
+
+        .search-div {
+            margin-top: 10px;
+            margin-left: auto;
+            grid-column: 1/3;
+        
+
+            #search {
+                border: 1px solid color(input-border);
+                border-radius: $inputborderradius;
+                width: 225px;
+                height: $inputheight;
+                margin-right: 10px;
+                padding-left: $inputpadding;
+                outline: none !important;
+                font-family: "Roboto Condensed", sans-serif;
+            }
+
+            #search-btn {
+                border: none;
+                height: 30px;
+                width: 45px;
+                margin-right: 10px;
+                border-radius: 10px;
+                background-color: color(button1);
+                outline: none !important;
+                cursor: pointer;
+            }
+        }
+
+       
+    }
+
+    .question-page {
+
+        margin-top: 50x;
+        background-color: white;
+
+        
+        }
+        
+
+        h1 {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 19.920px 10px;
+            align-content: center;
+            
+        }
+
+        .question {
+            border-bottom: 2px solid rgb(233, 231, 231);
+            margin-top: 100px;
+            padding: 10px;
+            height: 150px;
+            position: relative;
+
+            //use js here depending on length of question
+            // .answer-body {
+            //     white-space: nowrap;
+            //     overflow: hidden;
+            //     text-overflow: ellipsis;
+            // }
+
+            .upvotes-div {
+
+                position: absolute;
+                top: 50%;
+                margin-top: -39.5px;
+
+                .upvote {
+                    cursor: pointer;
+                }
+                
+                .upvotes-num {
+                    font-size: 35px;
+                }
+
+                .downvote {
+                    cursor: pointer;
+                }
+                
+            }
+
+            .answer-content-div {
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                margin-left: -110px;
+                margin-top: -40px;
+
+                .question-title {
+                    margin-top: -20px;
+                }
+
+                .answer-body {
+                    margin-top: 20px;
+                }
+
+                .quote {
+                    background-color: #dcdcdc;
+                }
+
+                .author-div {
+                    margin-top: 20px;
+                    margin-right: 20px;
+                }
+
+                .author-info {
+                    color: gray;
+                    margin-left: auto;
+                }
+
+                .author {
+                    margin-left: auto;
+                }
+
+                @include tablet {
+                    left: 10%;
+                    margin-left: 0;
+                    margin-top: -32px;
+
+                    .question-title {
+                        margin-top: -16px;
+                    }
+
+                    .answer-body {
+                        margin-top: 16px;
+                    }
+    
+                    .author {
+                        margin-top: 16px;
+                    }
+                }
+
+            }
+        }
+
+
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 60px;
+        font-size: 10px;
+    }

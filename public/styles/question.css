@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
+body {
+  margin: 0;
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+@media (min-width: 920px) {
+  body {
+    background-color: #bababa;
+  }
+}
+
+body nav {
+  position: fixed;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+  top: 0;
+  width: 100%;
+  height: 85px;
+  padding-bottom: 10px;
+  background-color: #fafafb;
+  border-top: 2px solid #0095ff;
+  border-bottom: 2px solid #e9e7e7;
+  z-index: 999;
+}
+
+body nav .logo {
+  margin-top: 16px;
+  margin-right: auto;
+  margin-left: 10px;
+}
+
+body nav .logo .home-redirect:link {
+  color: #111;
+  text-decoration: none;
+}
+
+body nav .logo .home-redirect:visited {
+  color: #111;
+  text-decoration: none;
+}
+
+body nav .logo .home-redirect:hover {
+  color: #111;
+  text-decoration: none;
+}
+
+body nav .logo .home-redirect:active {
+  color: #111;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  body nav #mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 920px) {
+  body nav #mobile {
+    display: none;
+  }
+}
+
+body nav #desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  body nav #desktop {
+    display: block;
+  }
+}
+
+@media (min-width: 920px) {
+  body nav #desktop {
+    display: block;
+  }
+}
+
+body nav .login-div {
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+body nav .login-div .nav-button {
+  position: relative;
+  border: none;
+  height: 28px;
+  width: 60px;
+  margin-top: 10px;
+  margin-left: 5px;
+  border-radius: 10px;
+  background-color: #f48024;
+  outline: none !important;
+  cursor: pointer;
+}
+
+body nav .search-div {
+  margin-top: 10px;
+  margin-left: auto;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+}
+
+body nav .search-div #search {
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  width: 225px;
+  height: 25px;
+  margin-right: 10px;
+  padding-left: 5px;
+  outline: none !important;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+body nav .search-div #search-btn {
+  border: none;
+  height: 30px;
+  width: 45px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: #f48024;
+  outline: none !important;
+  cursor: pointer;
+}
+
+body .question-page {
+  margin-top: 50x;
+  background-color: white;
+}
+
+body h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 19.920px 10px;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+body .question {
+  border-bottom: 2px solid #e9e7e7;
+  margin-top: 100px;
+  padding: 10px;
+  height: 150px;
+  position: relative;
+}
+
+body .question .upvotes-div {
+  position: absolute;
+  top: 50%;
+  margin-top: -39.5px;
+}
+
+body .question .upvotes-div .upvote {
+  cursor: pointer;
+}
+
+body .question .upvotes-div .upvotes-num {
+  font-size: 35px;
+}
+
+body .question .upvotes-div .downvote {
+  cursor: pointer;
+}
+
+body .question .answer-content-div {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-left: -110px;
+  margin-top: -40px;
+}
+
+body .question .answer-content-div .question-title {
+  margin-top: -20px;
+}
+
+body .question .answer-content-div .answer-body {
+  margin-top: 20px;
+}
+
+body .question .answer-content-div .quote {
+  background-color: #dcdcdc;
+}
+
+body .question .answer-content-div .author-div {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+body .question .answer-content-div .author-info {
+  color: gray;
+  margin-left: auto;
+}
+
+body .question .answer-content-div .author {
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  body .question .answer-content-div {
+    left: 10%;
+    margin-left: 0;
+    margin-top: -32px;
+  }
+  body .question .answer-content-div .question-title {
+    margin-top: -16px;
+  }
+  body .question .answer-content-div .answer-body {
+    margin-top: 16px;
+  }
+  body .question .answer-content-div .author {
+    margin-top: 16px;
+  }
+}
+
+footer {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 10px;
+}
+/*# sourceMappingURL=question.css.map */
