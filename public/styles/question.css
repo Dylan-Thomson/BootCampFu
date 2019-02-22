@@ -12,6 +12,18 @@ body {
   body {
     background-color: #bababa;
   }
+  body .question-page {
+    width: 80%;
+  }
+  body .answers {
+    width: 80%;
+  }
+  body .upvotes-div {
+    margin-left: 30px;
+  }
+  body .author {
+    margin-top: 40px;
+  }
 }
 
 body nav {
@@ -172,8 +184,7 @@ body .question-page .question {
   position: relative;
 }
 
-body .question-page .answer {
-  border-top: 2px solid #e9e7e7;
+body .question-page .answers {
   border-bottom: 2px solid #e9e7e7;
   padding: 10px;
   height: 150px;
@@ -181,26 +192,27 @@ body .question-page .answer {
   overflow: auto;
 }
 
-body .question-page .answer .q-upvotes-div {
+body .question-page .answers .q-upvotes-div {
   margin-left: 30px;
   position: absolute;
   top: 50%;
   margin-top: -39.5px;
 }
 
-body .question-page .answer .q-upvotes-div .q-upvote {
+body .question-page .answers .q-upvotes-div .q-upvote {
   cursor: pointer;
 }
 
-body .question-page .answer .q-upvotes-div .q-upvotes-num {
+body .question-page .answers .q-upvotes-div .q-upvotes-num {
   font-size: 35px;
+  position: relative;
 }
 
-body .question-page .answer .q-upvotes-div .q-downvote {
+body .question-page .answers .q-upvotes-div .q-downvote {
   cursor: pointer;
 }
 
-body .question-page .answer .answer-content-div {
+body .question-page .answers .answer-content-div {
   position: absolute;
   top: 35%;
   left: 50%;
@@ -209,37 +221,38 @@ body .question-page .answer .answer-content-div {
   margin-top: -40px;
 }
 
-body .question-page .answer .answer-body {
+body .question-page .answers .answer-body {
   margin-top: 20px;
 }
 
-body .question-page .answer .author-div {
+body .question-page .answers .author-div {
   margin-top: 20px;
   margin-right: 20px;
 }
 
-body .question-page .answer .author-info {
+body .question-page .answers .author-info {
   color: gray;
   margin-left: auto;
 }
 
-body .question-page .answer .author {
+body .question-page .answers .author {
   margin-left: auto;
+  margin-top: 50px;
 }
 
 @media (min-width: 768px) {
-  body .question-page .answer {
+  body .question-page .answers {
     left: 10%;
     margin-left: 0;
     margin-top: -32px;
   }
-  body .question-page .answer .question-title {
+  body .question-page .answers .question-title {
     margin-top: -16px;
   }
-  body .question-page .answer .answer-body {
+  body .question-page .answers .answer-body {
     margin-top: 16px;
   }
-  body .question-page .answer .author {
+  body .question-page .answers .author {
     margin-top: 16px;
   }
 }

@@ -42,6 +42,21 @@ body {
 
     @include desktop {
             background-color: #bababa;
+
+            .question-page { 
+                width: 80%;
+            }
+
+            .answers {
+                width: 80%;
+            }
+            .upvotes-div {
+                margin-left: 30px;
+            }
+
+            .author {
+                margin-top: 40px;
+            }
     }
 
     nav {
@@ -211,8 +226,8 @@ body {
             
             }
 
-            .answer {
-            border-top: 2px solid rgb(233, 231, 231);
+            .answers {
+            
             border-bottom: 2px solid rgb(233, 231, 231);
             padding: 10px;
             height: 150px;
@@ -232,6 +247,7 @@ body {
                     
                     .q-upvotes-num {
                         font-size: 35px;
+                        position: relative;
                     }
     
                     .q-downvote {
@@ -266,6 +282,7 @@ body {
     
                     .author {
                         margin-left: auto;
+                        margin-top: 50px;
                     }
     
                     @include tablet {
