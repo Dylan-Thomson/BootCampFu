@@ -137,7 +137,7 @@ body .question-page {
   background-color: white;
 }
 
-body h1 {
+body .question-page h1 {
   font-size: 1.5em;
   font-weight: bold;
   margin: 19.920px 10px;
@@ -145,7 +145,7 @@ body h1 {
       align-content: center;
 }
 
-body .question {
+body .question-page .question {
   border-bottom: 2px solid #e9e7e7;
   margin-top: 100px;
   padding: 10px;
@@ -153,73 +153,118 @@ body .question {
   position: relative;
 }
 
-body .question .upvotes-div {
+body .question-page .answer {
+  border-top: 2px solid #e9e7e7;
+  border-bottom: 2px solid #e9e7e7;
+  padding: 10px;
+  height: 150px;
+  position: relative;
+  overflow: auto;
+}
+
+body .question-page .answer .q-upvotes-div {
+  margin-left: 10px;
   position: absolute;
   top: 50%;
   margin-top: -39.5px;
 }
 
-body .question .upvotes-div .upvote {
+body .question-page .answer .q-upvotes-div .q-upvote {
   cursor: pointer;
 }
 
-body .question .upvotes-div .upvotes-num {
+body .question-page .answer .q-upvotes-div .q-upvotes-num {
   font-size: 35px;
 }
 
-body .question .upvotes-div .downvote {
+body .question-page .answer .q-upvotes-div .q-downvote {
   cursor: pointer;
 }
 
-body .question .answer-content-div {
+body .question-page .answer .answer-content-div {
   position: absolute;
-  top: 40%;
+  top: 35%;
   left: 50%;
-  margin-left: -110px;
+  margin-right: 10px;
+  margin-left: -80px;
   margin-top: -40px;
 }
 
-body .question .answer-content-div .question-title {
-  margin-top: -20px;
-}
-
-body .question .answer-content-div .answer-body {
+body .question-page .answer .answer-body {
   margin-top: 20px;
 }
 
-body .question .answer-content-div .quote {
-  background-color: #dcdcdc;
-}
-
-body .question .answer-content-div .author-div {
+body .question-page .answer .author-div {
   margin-top: 20px;
   margin-right: 20px;
 }
 
-body .question .answer-content-div .author-info {
+body .question-page .answer .author-info {
   color: gray;
   margin-left: auto;
 }
 
-body .question .answer-content-div .author {
+body .question-page .answer .author {
   margin-left: auto;
 }
 
 @media (min-width: 768px) {
-  body .question .answer-content-div {
+  body .question-page .answer {
     left: 10%;
     margin-left: 0;
     margin-top: -32px;
   }
-  body .question .answer-content-div .question-title {
+  body .question-page .answer .question-title {
     margin-top: -16px;
   }
-  body .question .answer-content-div .answer-body {
+  body .question-page .answer .answer-body {
     margin-top: 16px;
   }
-  body .question .answer-content-div .author {
+  body .question-page .answer .author {
     margin-top: 16px;
   }
+}
+
+body .question-page .reply-section {
+  margin-top: 30px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+body .question-page .reply-section .form-para {
+  margin: 5px;
+}
+
+body .question-page .reply-section #answer-username {
+  width: 75%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body .question-page .reply-section #answer-body {
+  width: 100%;
+  margin: 7px 0;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body .question-page .reply-section #submit-custom-answer-btn {
+  border: none;
+  height: 28px;
+  width: 60px;
+  border-radius: 10px;
+  background-color: #f48024;
+  outline: none !important;
+  cursor: pointer;
 }
 
 footer {

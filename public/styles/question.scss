@@ -164,8 +164,6 @@ body {
         background-color: white;
 
         
-        }
-        
 
         h1 {
             font-size: 1.5em;
@@ -189,80 +187,131 @@ body {
             //     text-overflow: ellipsis;
             // }
 
-            .upvotes-div {
-
-                position: absolute;
-                top: 50%;
-                margin-top: -39.5px;
-
-                .upvote {
-                    cursor: pointer;
-                }
-                
-                .upvotes-num {
-                    font-size: 35px;
-                }
-
-                .downvote {
-                    cursor: pointer;
-                }
-                
+            
             }
 
-            .answer-content-div {
-                position: absolute;
-                top: 40%;
-                left: 50%;
-                margin-left: -110px;
-                margin-top: -40px;
+            .answer {
+            border-top: 2px solid rgb(233, 231, 231);
+            border-bottom: 2px solid rgb(233, 231, 231);
+            padding: 10px;
+            height: 150px;
+            position: relative;
+            overflow: auto;
 
-                .question-title {
-                    margin-top: -20px;
-                }
 
-                .answer-body {
-                    margin-top: 20px;
-                }
-
-                .quote {
-                    background-color: #dcdcdc;
-                }
-
-                .author-div {
-                    margin-top: 20px;
-                    margin-right: 20px;
-                }
-
-                .author-info {
-                    color: gray;
-                    margin-left: auto;
-                }
-
-                .author {
-                    margin-left: auto;
-                }
-
-                @include tablet {
-                    left: 10%;
-                    margin-left: 0;
-                    margin-top: -32px;
-
-                    .question-title {
-                        margin-top: -16px;
+                .q-upvotes-div {
+                    margin-left: 10px;
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -39.5px;
+    
+                    .q-upvote {
+                        cursor: pointer;
                     }
+                    
+                    .q-upvotes-num {
+                        font-size: 35px;
+                    }
+    
+                    .q-downvote {
+                        cursor: pointer;
+                    }
+                    
+                }
+    
+                .answer-content-div {
+                    position: absolute;
+                    top: 35%;
+                    left: 50%;
+                    margin-right: 10px;
+                    margin-left: -80px;
+                    margin-top: -40px;
+                    
+                }
 
                     .answer-body {
-                        margin-top: 16px;
+                        margin-top: 20px;
+                    }
+
+                    .author-div {
+                        margin-top: 20px;
+                        margin-right: 20px;
+                    }
+    
+                    .author-info {
+                        color: gray;
+                        margin-left: auto;
                     }
     
                     .author {
-                        margin-top: 16px;
+                        margin-left: auto;
                     }
+    
+                    @include tablet {
+                        left: 10%;
+                        margin-left: 0;
+                        margin-top: -32px;
+    
+                        .question-title {
+                            margin-top: -16px;
+                        }
+    
+                        .answer-body {
+                            margin-top: 16px;
+                        }
+        
+                        .author {
+                            margin-top: 16px;
+                        }
+                    }
+                
                 }
 
+            
+
+        .reply-section { 
+            margin-top: 30px;
+            margin-left: 16px;
+            margin-right: 16px;
+
+            
+
+            .form-para {
+                margin: 5px;
+            }
+
+            #answer-username {
+                width: 75%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            #answer-body {
+                width: 100%;
+                margin: 7px 0;    
+                padding: 12px 20px;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            #submit-custom-answer-btn {
+                border: none;
+                height: 28px;
+                width: 60px;
+                border-radius: 10px;
+                background-color: color(button1);
+                outline: none !important;
+                cursor: pointer;
             }
         }
-
+      
+        }
 
     }
 
