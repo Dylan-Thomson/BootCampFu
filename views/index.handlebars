@@ -9,55 +9,55 @@
     {{/each}}
 </section>
 
-<section class="topic-section">
-    <h1>Browse Questions by Topic</h1>
-    <ul>
-        {{!-- <li class="topic-search" data-topic="1">HTML/CSS</li> --}}
-        <a href="questions/topics/html" class="topic-link"><li>HTML</li></a>
-        <a href="questions/topics/css" class="topic-link"><li>CSS</li></a>
-        <a href="questions/topics/javascript" class="topic-link"><li>JavaScript</li></a>
-        <a href="questions/topics/firebase" class="topic-link"><li>Firebase</li></a>
-        <a href="questions/topics/node" class="topic-link"><li>Node</li></a>
-        <a href="questions/topics/express" class="topic-link"><li>Express</li></a>
-        <a href="questions/topics/react" class="topic-link"><li>React</li></a>
-    </ul>
-</section>
+<div class="topic-ask-section">
+    <section class="topicsection">
+        <h1>Browse Questions by Topic</h1>
+        <ul>
+            {{!-- <li class="topic-search" data-topic="1">HTML/CSS</li> --}}
+            <a href="questions/topics/html" class="topic-link"><li>HTML</li></a>
+            <a href="questions/topics/css" class="topic-link"><li>CSS</li></a>
+            <a href="questions/topics/javascript" class="topic-link"><li>Javascript</li></a>
+            <a href="questions/topics/firebase" class="topic-link"><li>Firebase</li></a>
+            <a href="questions/topics/node" class="topic-link"><li>Node</li></a>
+            <a href="questions/topics/express" class="topic-link"><li>Express</li></a>
+            <a href="questions/topics/react" class="topic-link"><li>React</li></a>
+        </ul>
+    </section>
 
-<section class="ask-section">
-    <h1>Ask A Question</h1>
-    <form action="/api/questions" method="POST">
-        <p class="form-para">
-            Title:
-            <input id="question-title" name="title" placeholder="Need help with CSS!">
-        </p>
-        <p class="form-para">
-            Topic:
-            {{!-- <input id="question-topic" placeholder="e.g. Java"> --}}
-            <select name="topic" id="question-topic">
-                <option value="html">HTML</option>
-                <option value="css">CSS</option>
-                <option value="javascript">JavaScript</option>
-                <option value="firebase">Firebase</option>
-                <option value="node">Node</option>
-                <option value="Express">Express</option>
-                <option value="React">React</option>
-            </select>
-        </p>
-        {{!-- <p class="form-para">
-            Week Number:
-            <input id="question-week" placeholder="e.g. Week 1">
-        </p> --}}
-        <p class="form-para">
-            Question:<br>
-            <textarea id="question-body" name="text" placeholder="e.g. I'm going to cry"></textarea>
-        </p>
-        <p class="form-para">
-            <button type="submit" value="Submit" id="submit-custom-question-btn">Help!!!</button>
-        </p>
-    </form>
-</section>
+    <section class="ask-section">
+        <h1>Ask A Question</h1>
+        <form action="/api/questions" method="POST">
+            <p class="form-para">
+                Title:
+                <input id="question-title" name="title" placeholder="Need help with CSS!">
+            </p>
+            <p class="form-para">
+                Topic:
+                {{!-- <input id="question-topic" placeholder="e.g. Java"> --}}
+                <select name="topic" id="question-topic">
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="firebase">Firebase</option>
+                    <option value="node">Node</option>
+                    <option value="Express">Express</option>
+                    <option value="React">React</option>
+                </select>
+            </p>
+                {{!-- <p class="form-para">
+                Week Number:
+                <input id="question-week" placeholder="e.g. Week 1">
+                </p> --}}
+            <p class="form-para">
+                Question:<br>
+                <textarea id="question-body" name="text" placeholder="e.g. I'm going to cry"></textarea>
+            </p>
+            <p class="form-para">
+                <button type="submit" value="Submit" id="submit-custom-question-btn">Help!!!</button>
+            </p>
+        </form>
+    </section>
+</div>
 
-<footer>
-    Copyright &copy; 2019
-</footer>
+
 

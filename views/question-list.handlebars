@@ -1,52 +1,29 @@
 <div class="question-list">
+   
     <h1>{{topic}}</h1>
-    
-    {{#each questions}}
-        {{title}}
-    {{/each}}
+   
 
-    <div class="questions">
-        <div class="upvotes-div">
-            <i class="fas fa-chevron-up fa-lg upvote"></i>
-            <p class="upvotes-num">0</p> <!--templating-->
-            <i class="fas fa-chevron-down fa-lg downvote"></i>
-        </div>
-        <!--below will all use templating-->
-        <div class="question-content-div">
-            <a href="#"><p class="question-title">JavaScript function not working...</p></a>
-            <p class="question-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi enim maxime provident totam... </p>
-            <p class="author">Billy Bob</p>
-        </div>
-    </div>
-    <div class="questions">
-        <div class="upvotes-div">
-            <i class="fas fa-chevron-up fa-lg upvote"></i>
-            <p class="upvotes-num">0</p> <!--templating-->
-            <i class="fas fa-chevron-down fa-lg downvote"></i>
-        </div>
-        <!--below will all use templating-->
-        <div class="question-content-div">
-            <a href="#"><p class="question-title">JavaScript function not working...</p></a>
-            <p class="question-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi enim maxime provident totam... </p>
-            <p class="author">Billy Bob</p>
-        </div>
-    </div>
-    <div class="questions">
+
+    {{#each questions}}
+        
+        <div class="questions">
             <div class="upvotes-div">
                 <i class="fas fa-chevron-up fa-lg upvote"></i>
-                <p class="upvotes-num">0</p> <!--templating-->
+                <p class="upvotes-num">{{score}}</p> <!--templating-->
                 <i class="fas fa-chevron-down fa-lg downvote"></i>
             </div>
             <!--below will all use templating-->
             <div class="question-content-div">
-                <a href="#"><p class="question-title">JavaScript function not working...</p></a>
-                <p class="question-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi enim maxime provident totam... </p>
-                <p class="author">Billy Bob</p>
+                <a href="/questions/{{id}}"><p class="question-title">{{title}}</p></a>
+                <p class="question-body">{{text}}</p>
+                <p class="author">{{User.username}}</p>
             </div>
-        </div>
+            </div>
+    {{/each}}
+
+    
+        <!--below will all use templating-->
+        
 </div>
 
-<footer>
-    Copyright &copy; 2019
-</footer>
 
