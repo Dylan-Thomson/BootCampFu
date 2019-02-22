@@ -4,175 +4,58 @@ body {
   padding: 0;
   display: -ms-grid;
   display: grid;
-  justify-items: center;
   font-family: "Roboto Condensed", sans-serif;
 }
 
-@media (min-width: 920px) {
-  body {
-    background-color: #bababa;
-  }
+body .question-page {
+  margin-top: 85px;
+  background-color: #fff;
 }
 
-body nav {
-  position: fixed;
+body .question-page .question {
+  border-top: 2px solid #e9e7e7;
+  border-bottom: 2px solid #e9e7e7;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 2fr;
       grid-template-columns: 1fr 2fr;
-  top: 0;
-  width: 100%;
-  height: 85px;
-  padding-bottom: 10px;
-  background-color: #fafafb;
-  border-top: 2px solid #0095ff;
-  border-bottom: 2px solid #e9e7e7;
-  z-index: 999;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-body nav .logo {
-  margin-top: 16px;
-  margin-right: auto;
-  margin-left: 10px;
+body .question-page .question .upvotes-div {
+  margin-left: 20px;
 }
 
-body nav .logo .home-redirect:link {
-  color: #111;
-  text-decoration: none;
-}
-
-body nav .logo .home-redirect:visited {
-  color: #111;
-  text-decoration: none;
-}
-
-body nav .logo .home-redirect:hover {
-  color: #111;
-  text-decoration: none;
-}
-
-body nav .logo .home-redirect:active {
-  color: #111;
-  text-decoration: none;
-}
-
-@media (min-width: 768px) {
-  body nav #mobile {
-    display: none;
-  }
-}
-
-@media (min-width: 920px) {
-  body nav #mobile {
-    display: none;
-  }
-}
-
-body nav #desktop {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  body nav #desktop {
-    display: block;
-  }
-}
-
-@media (min-width: 920px) {
-  body nav #desktop {
-    display: block;
-  }
-}
-
-body nav .login-div {
-  margin-left: auto;
-  margin-right: 10px;
-}
-
-body nav .login-div .nav-button {
-  position: relative;
-  border: none;
-  height: 28px;
-  width: 60px;
-  margin-top: 10px;
-  margin-left: 5px;
-  border-radius: 10px;
-  background-color: #f48024;
-  outline: none !important;
-  cursor: pointer;
-}
-
-body nav .search-div {
-  margin-top: 10px;
-  margin-left: auto;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-column: 1/3;
-}
-
-body nav .search-div #search {
-  border: 1px solid lightgrey;
-  border-radius: 10px;
-  width: 225px;
-  height: 25px;
-  margin-right: 10px;
-  padding-left: 5px;
-  outline: none !important;
-  font-family: "Roboto Condensed", sans-serif;
-}
-
-body nav .search-div #search-btn {
-  border: none;
-  height: 30px;
-  width: 45px;
-  margin-right: 10px;
-  border-radius: 10px;
-  background-color: #f48024;
-  outline: none !important;
-  cursor: pointer;
-}
-
-body .question-page {
-  margin-top: 50x;
-  background-color: white;
-}
-
-body .question-page h1 {
-  font-size: 1.5em;
-  font-weight: bold;
-  margin: 19.920px 20px;
-  -ms-flex-line-pack: center;
-      align-content: center;
-}
-
-body .question-page .upvotes-div {
-  margin-left: -5px;
-  position: absolute;
-  top: 40%;
-  margin-top: -39.5px;
-}
-
-body .question-page .upvotes-div .upvote {
-  cursor: pointer;
-}
-
-body .question-page .upvotes-div .upvotes-num {
+body .question-page .question .upvotes-div .upvotes-num {
   font-size: 35px;
 }
 
-body .question-page .upvotes-div .downvote {
-  cursor: pointer;
+body .question-page .question .question-content-div {
+  margin-right: 10px;
 }
 
-body .question-page .question {
-  border-bottom: 2px solid #e9e7e7;
-  margin-top: 100px;
-  padding: 10px;
-  height: 150px;
-  position: relative;
+body .question-page .question .question-content-div .username {
+  margin-top: 10px;
 }
 
-body .question-page .answer {
+body .question-page .question .question-content-div .question-body-text {
+  margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+  body .question-page .question {
+    -ms-grid-columns: 1fr 5fr;
+        grid-template-columns: 1fr 5fr;
+  }
+}
+
+body .answers {
   border-top: 2px solid #e9e7e7;
   border-bottom: 2px solid #e9e7e7;
   padding: 10px;
@@ -181,26 +64,26 @@ body .question-page .answer {
   overflow: auto;
 }
 
-body .question-page .answer .q-upvotes-div {
+body .answers .q-upvotes-div {
   margin-left: 30px;
   position: absolute;
   top: 50%;
   margin-top: -39.5px;
 }
 
-body .question-page .answer .q-upvotes-div .q-upvote {
+body .answers .q-upvotes-div .q-upvote {
   cursor: pointer;
 }
 
-body .question-page .answer .q-upvotes-div .q-upvotes-num {
+body .answers .q-upvotes-div .q-upvotes-num {
   font-size: 35px;
 }
 
-body .question-page .answer .q-upvotes-div .q-downvote {
+body .answers .q-upvotes-div .q-downvote {
   cursor: pointer;
 }
 
-body .question-page .answer .answer-content-div {
+body .answers .answer-content-div {
   position: absolute;
   top: 35%;
   left: 50%;
@@ -209,52 +92,25 @@ body .question-page .answer .answer-content-div {
   margin-top: -40px;
 }
 
-body .question-page .answer .answer-body {
+body .answers .answer-content-div .answer-body {
   margin-top: 20px;
 }
 
-body .question-page .answer .author-div {
-  margin-top: 20px;
-  margin-right: 20px;
-}
-
-body .question-page .answer .author-info {
-  color: gray;
+body .answers .answer-content-div .author {
   margin-left: auto;
 }
 
-body .question-page .answer .author {
-  margin-left: auto;
-}
-
-@media (min-width: 768px) {
-  body .question-page .answer {
-    left: 10%;
-    margin-left: 0;
-    margin-top: -32px;
-  }
-  body .question-page .answer .question-title {
-    margin-top: -16px;
-  }
-  body .question-page .answer .answer-body {
-    margin-top: 16px;
-  }
-  body .question-page .answer .author {
-    margin-top: 16px;
-  }
-}
-
-body .question-page .reply-section {
+body .reply-section {
   margin-top: 30px;
   margin-left: 16px;
   margin-right: 16px;
 }
 
-body .question-page .reply-section .form-para {
+body .reply-section .form-para {
   margin: 5px;
 }
 
-body .question-page .reply-section #answer-username {
+body .reply-section #answer-username {
   width: 75%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -265,7 +121,7 @@ body .question-page .reply-section #answer-username {
           box-sizing: border-box;
 }
 
-body .question-page .reply-section #answer-body {
+body .reply-section #answer-body {
   width: 100%;
   margin: 7px 0;
   padding: 12px 20px;
@@ -276,19 +132,17 @@ body .question-page .reply-section #answer-body {
           box-sizing: border-box;
 }
 
-body .question-page .reply-section #submit-custom-answer-btn {
+body .reply-section #submit-custom-answer-btn {
   border: none;
   height: 28px;
   width: 60px;
   border-radius: 10px;
-  background-color: #f48024;
+  background-color: color(button1);
   outline: none !important;
   cursor: pointer;
 }
 
-footer {
-  text-align: center;
-  margin-top: 60px;
-  font-size: 10px;
+@media (min-width: 920px) {
+  background-color: #bababa;
 }
 /*# sourceMappingURL=question.css.map */
