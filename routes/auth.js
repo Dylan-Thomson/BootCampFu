@@ -18,7 +18,8 @@ module.exports = (app, passport) => {
     "/signin",
     passport.authenticate("local-signin", {
       successRedirect: "/dashboard",
-      failureRedirect: "/signin"
+      failureRedirect: "/signin",
+      failureFlash: true
     })
   );
 

@@ -2,13 +2,15 @@
     <h1>Sign In</h1>
     <p class="form-para">
         Email Address:
-        <input class="text" name="email" type="text" id="email-signin" placeholder="e.g. john@amazingcoder.com" />
+        <input class="text" name="email" type="email" id="email-signin" placeholder="e.g. john@amazingcoder.com" required>
     </p>
     <p class="form-para">
         Password:
-        <input name="password" type="password" id="password-signin"/>
+        <input name="password" type="password" id="password-signin" required>
     </p>
     <p class="form-para">
        <input class="btn" type="submit" value="Sign In" id="signin-btn" />
     </p>
 </form>
+
+<p>{{message}}</p>

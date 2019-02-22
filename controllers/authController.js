@@ -6,7 +6,7 @@ authController.signup = (req, res) => {
 };
 
 authController.signin = (req, res) => {
-  res.render("signin", { style: "signin.css" });
+  res.render("signin", { style: "signin.css", message: req.flash("error") });
 };
 
 authController.dashboard = (req, res) => {
