@@ -9,7 +9,8 @@ module.exports = (app, passport) => {
     "/signup",
     passport.authenticate("local-signup", {
       successRedirect: "/dashboard",
-      failureRedirect: "/"
+      failureRedirect: "/signup",
+      failureFlash: true
     })
   );
 
@@ -17,7 +18,8 @@ module.exports = (app, passport) => {
     "/signin",
     passport.authenticate("local-signin", {
       successRedirect: "/dashboard",
-      failureRedirect: "/signin"
+      failureRedirect: "/signin",
+      failureFlash: true
     })
   );
 
