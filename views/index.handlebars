@@ -1,7 +1,7 @@
 <section class="recentquestions-section">
     <h1>Recent Questions</h1>
     {{#each recentQuestions}}
-        <h2>{{title}}</h2> 
+        <h2><a href="/questions/{{id}}">{{title}}</a></h2> 
         <p>{{topic}}</p>
         <p>{{text}}</p>
         <p>{{User.username}}</p>
