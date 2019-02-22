@@ -1,3 +1,19 @@
+if($(".question-body-text").length > 0) {
+  console.log($(".question-body-text").text());
+  const splitText= $(".question-body-text").text().split("`");
+  console.log(splitText);
+  for(let i = 0; i < splitText.length; i++) {
+    if(i % 2 !== 0) {
+      splitText[i] = splitText[i].replace(/</g, "&lt;");
+      splitText[i] = splitText[i].replace(/>/g, "&gt;");
+      console.log(splitText[i]);
+      splitText[i] = "<pre class=\"prettyprint\">\n<code>\n" + splitText[i] + "</code></pre>"
+    }
+  }
+  console.log(splitText.join(""));
+  $(".question-body-text").html(splitText.join(""));
+}
+
 $("#signup-login-btn").on("click", function() {
   window.location.href = "/signup";
 });
