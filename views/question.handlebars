@@ -1,22 +1,26 @@
 <div class="question-page">
+    <h1>Question</h1>
+    
     <div class="question">
         <div class="upvotes-div">
                 <i class="fas fa-chevron-up fa-lg upvote" data-questionid={{question.id}}></i>
                 <p class="upvotes-num">{{question.score}}</p> <!--templating-->
                 <i class="fas fa-chevron-down fa-lg downvote" data-questionid={{question.id}}></i>
         </div>
-        <div class="question-content-div">
+        <div class="title-author">
             <h2>{{question.title}}</h2>
-            <div class="username">{{question.User.username}}</div>
+            <p class="username">{{question.User.username}}</p>
+        </div>
+        <div class="question-content-div">
             <p class="question-body-text">{{question.text}}</p>
         </div>
     </div>
 
-    <br> <br>
+    <h1>Responses</h1>
 
     {{#each answers}}
     <div class="answers">
-        <div class=".q-upvotes-div">
+        <div class="q-upvotes-div">
             <i class="fas fa-chevron-up fa-lg a-upvote" data-questionid={{QuestionId}} data-answerId={{id}}></i>
             <p class="q-upvotes-num">{{score}}</p>
             <i class="fas fa-chevron-down fa-lg a-downvote" data-questionid={{QuestionId}} data-answerId={{id}}></i>
