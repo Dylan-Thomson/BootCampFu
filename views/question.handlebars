@@ -6,6 +6,8 @@
 
 {{#each question.answer}}
   <p>{{text}}</p>
+  <p>{{User.username}}</p>
+  <p>{{score}}</p>
 {{/each}}
 
 <div class="question-page">
@@ -17,21 +19,27 @@
         </div>
 
         <br> <br>
+<div class="answer">
+            <h1>{{question.title}}</h1>
+            <p class="username">{{question.User.username}}</p>
+            <p class="question-body-text">{{question.text}}</p>
+            <p class="timestamp">{{question.createdAt}}</p>
+        </div>
 
 
         <section class="reply-section">
             <h1>Write a response</h1>
-            <form action="/api/question/{{id}}/answers" method="POST">
+            <form action="/api/questions/{{question.id}}/answers" method="POST">
             <p class="form-para">
                 User Name:
-                <input id="answer-username" placeholder="User name here">
+                <input id="answer-username" placeholder="User name here" name= "username">
             </p>
             <p class="form-para">
                 Answer:<br>
-                <textarea id="answer-body" placeholder="Start crying"></textarea>
+                <textarea id="answer-body" placeholder="Start crying" name = "text"></textarea>
             </p>
             <p class="form-para">
-                <button id="submit-custom-answer-btn">Done!!!</button>
+                <button type="submit" value="Submit" id="submit-custom-answer-btn">Done!!!</button>
             </p>
             </form>
         </section>
