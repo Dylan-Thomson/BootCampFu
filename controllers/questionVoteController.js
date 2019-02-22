@@ -31,6 +31,7 @@ questionVoteController.upvote = (req, res) => {
             } else {
               // add to QuestionUpvotes, update score
               req.body.QuestionId = req.params.questionId;
+              req.body.UserId = req.user.id;
               db.QuestionUpvotes.create(req.body).then(() => {
                 db.Question.update(
                   { score: db.sequelize.literal("score + 1") },
@@ -89,6 +90,7 @@ questionVoteController.downvote = (req, res) => {
             } else {
               // add to downvotes, update score
               req.body.QuestionId = req.params.questionId;
+              req.body.UserId = req.user.id;
               db.QuestionDownvotes.create(req.body).then(() => {
                 db.Question.update(
                   { score: db.sequelize.literal("score - 1") },

@@ -20,13 +20,14 @@ $("#search-btn").on("click", function() {
 $(".upvote").on("click", function() {
   let questionid = $(this).data("questionid");
   $.post(`/api/questions/${questionid}/upvotes`, function(data) {
-    console.log(data);
+    // console.log(data);
+    window.location.reload();
   });
 });
 
 $(".downvote").on("click", function() {
   let questionid = $(this).data("questionid");
   $.post(`/api/questions/${questionid}/downvotes`, function(data) {
-    console.log(data);
+    window.location.reload();
   });
 });
