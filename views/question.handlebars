@@ -5,48 +5,58 @@
 <p>{{question.createdAt}}</p>  --}}
 
 {{#each question.answer}}
-  <p>{{text}}</p>
-  <p>{{User.username}}</p>
-  <p>{{score}}</p>
+<p>{{text}}</p>
+<p>{{User.username}}</p>
+<p>{{score}}</p>
 {{/each}}
 
 <div class="question-page">
-        <div class="question">
-            <h1>{{question.title}}</h1>
-            <p class="username">{{question.User.username}}</p>
-            <p class="question-body-text">{{question.text}}</p>
-            <p class="timestamp">{{question.createdAt}}</p>
+    <div class="question">
+        <h1>{{question.title}}</h1>
+        <p class="username">{{question.User.username}}</p>
+        <p class="question-body-text">{{question.text}}</p>
+        <p class="timestamp">{{question.createdAt}}</p>
+    </div>
+
+    <br> <br>
+
+    {{#each answers}}
+    <div class="answers">
+        <div class=".q-upvotes-div">
+            <i class="fas fa-chevron-up fa-lg q-upvote"></i>
+            <p class="q-upvotes-num">{{score}}</p> <!--templating-->
+            <i class="fas fa-chevron-down fa-lg q-downvote"></i>
         </div>
-
-        <br> <br>
-<div class="answer">
-            <h1>{{question.title}}</h1>
-            <p class="username">{{question.User.username}}</p>
-            <p class="question-body-text">{{question.text}}</p>
-            <p class="timestamp">{{question.createdAt}}</p>
+        <div class="answer-content-div">
+            <p class="answer-body">{{text}}</p>
+            <p class="author">{{User.username}}</p>
         </div>
+    </div>
+    {{/each}}
 
 
-        <section class="reply-section">
-            <h1>Write a response</h1>
-            <form action="/api/questions/{{question.id}}/answers" method="POST">
-            <p class="form-para">
-                User Name:
-                <input id="answer-username" placeholder="User name here" name= "username">
+    <section class="reply-section">
+        <h1>Write a response</h1>
+        <form class="reply-form" action="/api/questions/{{question.id}}/answers" method="POST">
+            <p class="author">
+                {{#each answers}}
+                {{User.username}}
+                {{/each}}
             </p>
             <p class="form-para">
                 Answer:<br>
-                <textarea id="answer-body" placeholder="Start crying" name = "text"></textarea>
+                <textarea id="answer-body" placeholder="Start crying" name="text"></textarea>
             </p>
             <p class="form-para">
                 <button type="submit" value="Submit" id="submit-custom-answer-btn">Done!!!</button>
             </p>
-            </form>
-        </section>
-    </div>
+        </form>
+    </section>
+</div>
 
-    
+
 
 
 </body>
+
 </html>
