@@ -3,6 +3,7 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 const passport = require("passport");
 const session = require("express-session");
+const flash = require("connect-flash");
 
 const db = require("./models");
 
@@ -13,6 +14,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
+app.use(flash());
 
 // Passport
 app.use(
