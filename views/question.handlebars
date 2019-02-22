@@ -1,9 +1,9 @@
 <div class="question-page">
     <div class="question">
         <div class="upvotes-div">
-                <i class="fas fa-chevron-up fa-lg upvote"></i>
-                <p class="upvotes-num">{{score}}</p> <!--templating-->
-                <i class="fas fa-chevron-down fa-lg downvote"></i>
+                <i class="fas fa-chevron-up fa-lg upvote" data-questionid={{question.id}}></i>
+                <p class="upvotes-num">{{question.score}}</p> <!--templating-->
+                <i class="fas fa-chevron-down fa-lg downvote" data-questionid={{question.id}}></i>
         </div>
         <div class="question-content-div">
         <h1>{{question.title}}</h1>
