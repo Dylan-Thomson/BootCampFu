@@ -1,15 +1,3 @@
-{{!-- <h2>{{question.title}}</h2> 
-<p>{{question.topic}}</p>
-<p>{{question.text}}</p>
-<p>{{question.User.username}}</p>
-<p>{{question.createdAt}}</p>  --}}
-
-{{#each question.answer}}
-<p>{{text}}</p>
-<p>{{User.username}}</p>
-<p>{{score}}</p>
-{{/each}}
-
 <div class="question-page">
     <div class="question">
         <div class="upvotes-div">
@@ -31,7 +19,7 @@
     <div class="answers">
         <div class=".q-upvotes-div">
             <i class="fas fa-chevron-up fa-lg q-upvote"></i>
-            <p class="q-upvotes-num">{{score}}</p> <!--templating-->
+            <p class="q-upvotes-num">{{score}}</p>
             <i class="fas fa-chevron-down fa-lg q-downvote"></i>
         </div>
         <div class="answer-content-div">

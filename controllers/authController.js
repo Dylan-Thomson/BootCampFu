@@ -1,11 +1,12 @@
 let authController = module.exports;
 
 authController.signup = (req, res) => {
-  res.render("signup", { style: "signup.css" });
+  // console.log(req.flash("error"));
+  res.render("signup", { style: "signup.css", message: req.flash("error") });
 };
 
 authController.signin = (req, res) => {
-  res.render("signin", { style: "signin.css" });
+  res.render("signin", { style: "signin.css", message: req.flash("error") });
 };
 
 authController.dashboard = (req, res) => {

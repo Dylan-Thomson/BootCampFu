@@ -179,24 +179,64 @@ body {
     }
 
     .recentquestions-section {
+        width: 100%;
         margin-top: 100px;
-        width: 90%;
 
         h1 {
             font-size: 1.5em;
             font-weight: bold;
             margin-top: 19.920px;
             margin-bottom: 19.920px;
+            margin-left: 10px;
         }
 
         @include tablet {
             margin-top: 60px;
         }
-        
+
+        .recent-question {
+            border-top: 2px solid rgb(233, 231, 231);
+            border-bottom: 2px solid rgb(233, 231, 231);
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            align-items: center;
+            height: 150px;
+
+            .upvotes-div {
+         
+                margin-left: 20px;
+                
+                .upvotes-num {
+                    font-size: 35px;
+                }
+            }
+
+            .question-content {
+                margin-right: 10px;
+
+                h2 {
+                    margin-bottom: 20px;
+                }
+            
+                .topic {
+                    margin-top: 20px;
+                }
+            
+                .author {
+                    margin-top: 20px;
+                }
+            }  
+
+            @include tablet {
+                grid-template-columns: 1fr 5fr;
+            }
+        } 
     }
 
     .topic-ask-section {
         width: 90%;
+        margin-top: 10px;
+        margin-bottom: 20px;
         
         .topicsection {
 
@@ -327,4 +367,3 @@ body {
         }
     }
 }
-

@@ -39,9 +39,16 @@ module.exports = function(app) {
       },
       include: [db.User, db.Answer]
     }).then(dbQuestion => {
-      res.render("question", {
-        style: "question.css",
-        question: dbQuestion
+      console.log(dbQuestion);
+      db.Answer.findAll({
+        where: { QuestionId: req.params.id },
+        include: [db.User]
+      }).then(dbAnswers => {
+        res.render("question", {
+          style: "question.css",
+          question: dbQuestion,
+          answers: dbAnswers
+        });
       });
     });
   });
