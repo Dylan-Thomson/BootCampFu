@@ -1,11 +1,18 @@
 <section class="recentquestions-section">
     <h1>Recent Questions</h1>
     {{#each recentQuestions}}
-        <h2><a href="/questions/{{id}}">{{title}}</a></h2> 
-        <p>{{topic}}</p>
-        <p>{{text}}</p>
-        <p>{{User.username}}</p>
-        <p>{{createdAt}}</p> 
+        <div class="recent-question">
+            <div class="upvotes-div">
+                <i class="fas fa-chevron-up fa-lg upvote"></i>
+                <p class="upvotes-num">{{score}}</p> 
+                <i class="fas fa-chevron-down fa-lg downvote"></i>
+            </div>
+            <div class="question-content">
+                <a href="/questions/{{id}}"><h2>{{title}}</h2></a>
+                <p class="topic">{{topic}}</p>
+                <p class="author">{{User.username}}</p>
+            </div>
+        </div>
     {{/each}}
 </section>
 
@@ -13,7 +20,6 @@
     <section class="topicsection">
         <h1>Browse Questions by Topic</h1>
         <ul>
-            {{!-- <li class="topic-search" data-topic="1">HTML/CSS</li> --}}
             <a href="questions/topics/html" class="topic-link"><li>HTML</li></a>
             <a href="questions/topics/css" class="topic-link"><li>CSS</li></a>
             <a href="questions/topics/javascript" class="topic-link"><li>Javascript</li></a>
@@ -33,7 +39,6 @@
             </p>
             <p class="form-para">
                 Topic:
-                {{!-- <input id="question-topic" placeholder="e.g. Java"> --}}
                 <select name="topic" id="question-topic">
                     <option value="html">HTML</option>
                     <option value="css">CSS</option>
@@ -44,10 +49,6 @@
                     <option value="React">React</option>
                 </select>
             </p>
-                {{!-- <p class="form-para">
-                Week Number:
-                <input id="question-week" placeholder="e.g. Week 1">
-                </p> --}}
             <p class="form-para">
                 Question:<br>
                 <textarea id="question-body" name="text" placeholder="e.g. I'm going to cry" required></textarea>
@@ -58,6 +59,8 @@
         </form>
     </section>
 </div>
+
+
 
 
 
