@@ -1,7 +1,7 @@
 <section class="recentquestions-section">
     <h1>Recent Questions</h1>
     {{#each recentQuestions}}
-        <h2>{{title}}</h2> 
+        <h2><a href="/questions/{{id}}">{{title}}</a></h2> 
         <p>{{topic}}</p>
         <p>{{text}}</p>
         <p>{{User.username}}</p>
@@ -50,7 +50,7 @@
                 </p> --}}
             <p class="form-para">
                 Question:<br>
-                <textarea id="question-body" name="text" placeholder="e.g. I'm going to cry"></textarea>
+                <textarea id="question-body" name="text" placeholder="e.g. I'm going to cry" required></textarea>
             </p>
             <p class="form-para">
                 <button type="submit" value="Submit" id="submit-custom-question-btn">Help!!!</button>
