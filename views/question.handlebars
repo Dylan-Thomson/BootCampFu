@@ -12,10 +12,17 @@
 
 <div class="question-page">
     <div class="question">
+        <div class="upvotes-div">
+                <i class="fas fa-chevron-up fa-lg upvote"></i>
+                <p class="upvotes-num">{{score}}</p> <!--templating-->
+                <i class="fas fa-chevron-down fa-lg downvote"></i>
+        </div>
+        <div class="question-content-div">
         <h1>{{question.title}}</h1>
-        <p class="username">{{question.User.username}}</p>
-        <p class="question-body-text">{{question.text}}</p>
-        <p class="timestamp">{{question.createdAt}}</p>
+            <p class="username">{{question.User.username}}</p>
+            <p class="question-body-text">{{question.text}}</p>
+            <p class="timestamp">{{question.createdAt}}</p>
+        </div>
     </div>
 
     <br> <br>

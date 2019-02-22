@@ -168,8 +168,29 @@ body {
         h1 {
             font-size: 1.5em;
             font-weight: bold;
-            margin: 19.920px 10px;
+            margin: 19.920px 20px;
             align-content: center;
+            
+        }
+
+        .upvotes-div {
+
+            margin-left: -5px;
+            position: absolute;
+            top: 40%;
+            margin-top: -39.5px;
+
+            .upvote {
+                cursor: pointer;
+            }
+            
+            .upvotes-num {
+                font-size: 35px;
+            }
+
+            .downvote {
+                cursor: pointer;
+            }
             
         }
 
@@ -200,7 +221,7 @@ body {
 
 
                 .q-upvotes-div {
-                    margin-left: 10px;
+                    margin-left: 30px;
                     position: absolute;
                     top: 50%;
                     margin-top: -39.5px;

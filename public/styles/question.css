@@ -140,9 +140,28 @@ body .question-page {
 body .question-page h1 {
   font-size: 1.5em;
   font-weight: bold;
-  margin: 19.920px 10px;
+  margin: 19.920px 20px;
   -ms-flex-line-pack: center;
       align-content: center;
+}
+
+body .question-page .upvotes-div {
+  margin-left: -5px;
+  position: absolute;
+  top: 40%;
+  margin-top: -39.5px;
+}
+
+body .question-page .upvotes-div .upvote {
+  cursor: pointer;
+}
+
+body .question-page .upvotes-div .upvotes-num {
+  font-size: 35px;
+}
+
+body .question-page .upvotes-div .downvote {
+  cursor: pointer;
 }
 
 body .question-page .question {
@@ -163,7 +182,7 @@ body .question-page .answer {
 }
 
 body .question-page .answer .q-upvotes-div {
-  margin-left: 10px;
+  margin-left: 30px;
   position: absolute;
   top: 50%;
   margin-top: -39.5px;
