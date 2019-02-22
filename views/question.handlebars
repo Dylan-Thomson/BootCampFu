@@ -18,9 +18,9 @@
     {{#each answers}}
     <div class="answers">
         <div class=".q-upvotes-div">
-            <i class="fas fa-chevron-up fa-lg a-upvote"></i>
+            <i class="fas fa-chevron-up fa-lg a-upvote" data-questionid={{QuestionId}} data-answerId={{id}}></i>
             <p class="q-upvotes-num">{{score}}</p>
-            <i class="fas fa-chevron-down fa-lg a-downvote"></i>
+            <i class="fas fa-chevron-down fa-lg a-downvote" data-questionid={{QuestionId}} data-answerId={{id}}></i>
         </div>
         <div class="answer-content-div">
             <p class="answer-body">{{text}}</p>
@@ -33,11 +33,6 @@
     <section class="reply-section">
         <h1>Write a response</h1>
         <form class="reply-form" action="/api/questions/{{question.id}}/answers" method="POST">
-            <p class="author">
-                {{#each answers}}
-                {{User.username}}
-                {{/each}}
-            </p>
             <p class="form-para">
                 Answer:<br>
                 <textarea id="answer-body" placeholder="Start crying" name="text"></textarea>
