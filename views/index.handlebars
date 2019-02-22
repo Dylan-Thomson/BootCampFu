@@ -3,9 +3,9 @@
     {{#each recentQuestions}}
         <div class="recent-question">
             <div class="upvotes-div">
-                <i class="fas fa-chevron-up fa-lg upvote"></i>
+                <i class="fas fa-chevron-up fa-lg upvote" data-questionid={{id}}></i>
                 <p class="upvotes-num">{{score}}</p> 
-                <i class="fas fa-chevron-down fa-lg downvote"></i>
+                <i class="fas fa-chevron-down fa-lg downvote" data-questionid={{id}}></i>
             </div>
             <div class="question-content">
                 <a href="/questions/{{id}}"><h2>{{title}}</h2></a>

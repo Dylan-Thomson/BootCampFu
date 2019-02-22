@@ -3,6 +3,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Roboto Condensed", sans-serif;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
 }
 
 body nav {
@@ -45,6 +48,17 @@ body nav .logo .home-redirect:hover {
 body nav .logo .home-redirect:active {
   color: #111;
   text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  body nav .logo {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+  }
 }
 
 @media (min-width: 768px) {
@@ -93,6 +107,14 @@ body nav .login-div .nav-button {
   cursor: pointer;
 }
 
+@media (min-width: 768px) {
+  body nav .login-div {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+  }
+}
+
 body nav .search-div {
   margin-top: 10px;
   margin-left: auto;
@@ -123,30 +145,50 @@ body nav .search-div #search-btn {
   cursor: pointer;
 }
 
-body form {
-  display: -ms-grid;
-  display: grid;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  justify-items: center;
-  margin-top: 90px;
-}
-
-body form h1 {
-  font-size: 1.5em;
-  font-weight: bold;
-  margin-top: 19.920px;
-  margin-bottom: 19.920px;
-}
-
 @media (min-width: 768px) {
-  body form h1 {
-    text-align: center;
+  body nav .search-div {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
   }
 }
 
-body form .form-para #email-signin {
-  margin-left: 10px;
+@media (min-width: 768px) {
+  body nav {
+    -ms-grid-columns: 1fr 3fr;
+        grid-template-columns: 1fr 3fr;
+    height: 50px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media (min-width: 920px) {
+  body nav {
+    -ms-grid-columns: 1fr 3fr;
+        grid-template-columns: 1fr 3fr;
+  }
+}
+
+body .form-div {
+  margin-top: 125px;
+  width: 70%;
+}
+
+body .form-div form h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 19.920px;
+  text-align: center;
+}
+
+body .form-div form .form-para {
+  font-size: 14px;
+}
+
+body .form-div form .form-para #email-signin {
+  margin-top: 10px;
   margin-bottom: 16px;
   width: 200px;
   height: 25px;
@@ -157,8 +199,8 @@ body form .form-para #email-signin {
   font-family: "Roboto Condensed", sans-serif;
 }
 
-body form .form-para #password-signin {
-  margin-left: 10px;
+body .form-div form .form-para #password-signin {
+  margin-top: 10px;
   margin-bottom: 16px;
   width: 200px;
   height: 25px;
@@ -169,12 +211,25 @@ body form .form-para #password-signin {
   font-family: "Roboto Condensed", sans-serif;
 }
 
-body form .form-para #signin-btn {
+body .form-div form .form-para #signin-btn {
   height: 30px;
   width: 100px;
   border: none;
   font-family: "Roboto Condensed", sans-serif;
   background-color: #f48024;
   cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  body .form-div {
+    width: 28%;
+    margin-top: 75px;
+  }
+}
+
+@media (min-width: 920px) {
+  body .form-div {
+    width: 20%;
+  }
 }
 /*# sourceMappingURL=signin.css.map */
