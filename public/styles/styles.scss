@@ -76,6 +76,12 @@ body {
                 color: #111;
                 text-decoration: none;
             }
+
+            @include tablet {
+                grid-row: 1/2;
+                grid-column: 1/2;
+                // margin-top: 20px;
+            }
         }
 
         #mobile {
@@ -119,6 +125,11 @@ body {
                 outline: none !important;
                 cursor: pointer;
             }
+
+            @include tablet {
+                grid-row: 1/2;
+                // margin-top: 10px;
+            }
         }
 
         .search-div {
@@ -148,6 +159,20 @@ body {
                 outline: none !important;
                 cursor: pointer;
             }
+
+            @include tablet {
+                grid-row: 1/2;
+            }
+        }
+
+        @include tablet {
+            grid-template-columns: 1fr 3fr;
+            height: 50px;
+            align-items: center;
+        }
+
+        @include desktop {
+            grid-template-columns: 1fr 3fr;
         }
 
        
@@ -157,162 +182,149 @@ body {
         margin-top: 100px;
         width: 90%;
 
-        @include tablet {
-            width: 75%;
-        }
-
         h1 {
             font-size: 1.5em;
             font-weight: bold;
             margin-top: 19.920px;
             margin-bottom: 19.920px;
-
-            @include tablet {
-                text-align: center;
-            }
         }
-    }
-
-    .topic-section {
-        width: 90%;
 
         @include tablet {
-            width: 75%;
+            margin-top: 60px;
         }
-
-        h1 {
-            font-size: 1.5em;
-            font-weight: bold;
-            margin-top: 19.920px;
-            margin-bottom: 19.920px;
-
-            @include tablet {
-                text-align: center;
-            }
-        }
-
-        ul {
-            padding: 0;
-            list-style-type: none;
-            margin-bottom: 16px;
-
-            .topic-link:link {
-                color: #111;
-                text-decoration: none;
-            }
         
-            .topic-link:visited {
-                color: #111;
-                text-decoration: none;
-            }
-        
-            .topic-link:hover{
-                color: #111;
-                text-decoration: none;
-            }
-        
-            .topic-link:active{
-                color: #111;
-                text-decoration: none;
-            }
-   
-            li {
-                display: inline-block;
-                padding: 3px;
-                width: 80px;
-                border: 1px solid color(button1);
-                background-color: color(button1);
-                margin-top: 5px;
-                text-align: center;
-                cursor: pointer;
-            }
-        }
     }
 
-    .ask-section {
+    .topic-ask-section {
         width: 90%;
         
+        .topicsection {
+
+            h1 {
+                font-size: 1.5em;
+                font-weight: bold;
+                margin-top: 19.920px;
+                margin-bottom: 19.920px;
+            }
+
+            ul {
+                padding: 0;
+                list-style-type: none;
+                margin-bottom: 16px;
+
+                .topic-link:link {
+                    color: #111;
+                    text-decoration: none;
+                }
+            
+                .topic-link:visited {
+                    color: #111;
+                    text-decoration: none;
+                }
+            
+                .topic-link:hover{
+                    color: #111;
+                    text-decoration: none;
+                }
+            
+                .topic-link:active{
+                    color: #111;
+                    text-decoration: none;
+                }
+    
+                li {
+                    display: inline-block;
+                    padding: 3px;
+                    width: 80px;
+                    border: 1px solid color(button1);
+                    background-color: color(button1);
+                    margin-top: 5px;
+                    text-align: center;
+                    cursor: pointer;
+                }
+
+                @include desktop {
+                    width: 60%;
+                }
+            }
+        }
+
+        .ask-section {
+
+            h1 {
+                font-size: 1.5em;
+                font-weight: bold;
+                margin-top: 19.920px;
+                margin-bottom: 19.920px;
+            }
+
+            .form-para {
+
+                #question-title {
+                    margin-left: 10px;
+                    margin-bottom: 16px;
+                    width: 200px;
+                    height: $inputheight;
+                    border-radius: $inputborderradius;
+                    border: 1px solid color(input-border);
+                    outline: none !important;
+                    padding-left: $inputpadding;
+                    font-family: "Roboto Condensed", sans-serif;
+                }
+
+                #question-topic {
+                    margin-left: 10px;
+                    margin-bottom: 16px;
+                    width: 200px;
+                    height: $inputheight;
+                    border-radius: $inputborderradius;
+                    border: 1px solid color(input-border);
+                    outline: none !important;
+                    padding-left: $inputpadding;
+                    font-family: "Roboto Condensed", sans-serif;
+                }
+
+                #question-week {
+                    margin-left: 10px;
+                    margin-bottom: 16px;
+                    width: 80px;
+                    height: $inputheight;
+                    border-radius: $inputborderradius;
+                    border: 1px solid color(input-border);
+                    outline: none !important;
+                    padding-left: $inputpadding;
+                    font-family: "Roboto Condensed", sans-serif;
+
+                }
+                    
+                #question-body {
+                    margin-top: 10px;
+                    margin-bottom: 16px;
+                    height: 100px;
+                    width: 280px;
+                    border-radius: $inputborderradius;
+                    border: 1px solid color(input-border);
+                    outline: none !important;
+                    overflow: auto;
+                    font-family: "Roboto Condensed", sans-serif;
+
+                }
+
+                #submit-custom-question-btn {
+                    height: 30px;
+                    width: 100px;
+                    border: none;
+                    font-family: "Roboto Condensed", sans-serif;
+                    background-color: color(button1);
+                    cursor: pointer;
+                }
+            }   
+        }
+
         @include tablet {
-            width: 75%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
         }
-
-        h1 {
-            font-size: 1.5em;
-            font-weight: bold;
-            margin-top: 19.920px;
-            margin-bottom: 19.920px;
-
-            @include tablet {
-                text-align: center;
-            }
-        }
-
-        .form-para {
-
-            #question-title {
-                margin-left: 10px;
-                margin-bottom: 16px;
-                width: 200px;
-                height: $inputheight;
-                border-radius: $inputborderradius;
-                border: 1px solid color(input-border);
-                outline: none !important;
-                padding-left: $inputpadding;
-                font-family: "Roboto Condensed", sans-serif;
-            }
-
-            #question-topic {
-                margin-left: 10px;
-                margin-bottom: 16px;
-                width: 200px;
-                height: $inputheight;
-                border-radius: $inputborderradius;
-                border: 1px solid color(input-border);
-                outline: none !important;
-                padding-left: $inputpadding;
-                font-family: "Roboto Condensed", sans-serif;
-            }
-
-            #question-week {
-                margin-left: 10px;
-                margin-bottom: 16px;
-                width: 80px;
-                height: $inputheight;
-                border-radius: $inputborderradius;
-                border: 1px solid color(input-border);
-                outline: none !important;
-                padding-left: $inputpadding;
-                font-family: "Roboto Condensed", sans-serif;
-
-            }
-                
-            #question-body {
-                margin-top: 10px;
-                margin-bottom: 16px;
-                height: 100px;
-                width: 280px;
-                border-radius: $inputborderradius;
-                border: 1px solid color(input-border);
-                outline: none !important;
-                overflow: auto;
-                font-family: "Roboto Condensed", sans-serif;
-
-            }
-
-            #submit-custom-question-btn {
-                height: 30px;
-                width: 100px;
-                border: none;
-                font-family: "Roboto Condensed", sans-serif;
-                background-color: color(button1);
-                cursor: pointer;
-            }
-        }
-    }
-
-    footer {
-        margin-top: 60px;
-        font-size: 10px;
     }
 }
 
