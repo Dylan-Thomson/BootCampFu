@@ -5,8 +5,8 @@ answerController.postAnswer = (req, res) => {
   if (req.user) {
     req.body.QuestionId = req.params.questionId;
     req.body.UserId = req.user.id;
-    db.Answer.create(req.body).then(dbAnswer => {
-      res.json(dbAnswer);
+    db.Answer.create(req.body).then(() => {
+      res.redirect("/questions/" + req.params.questionId);
     });
   } else {
     res.redirect("/signin");
