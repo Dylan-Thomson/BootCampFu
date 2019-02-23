@@ -7,7 +7,7 @@ if ($(".question-body-text").length > 0) {
       splitText[i] = splitText[i].replace(/</g, "&lt;");
       splitText[i] = splitText[i].replace(/>/g, "&gt;");
       splitText[i] =
-        "<pre class=\"prettyprint\">\n<code>\n" + splitText[i] + "</code></pre>";
+        "<pre class=\"prettyprint\">\n<code>" + splitText[i] + "</code></pre>";
     }
   }
   $(".question-body-text").html(splitText.join(""));
@@ -22,7 +22,7 @@ if ($(".answer-body").length > 0) {
         splitText[i] = splitText[i].replace(/</g, "&lt;");
         splitText[i] = splitText[i].replace(/>/g, "&gt;");
         splitText[i] =
-          "<pre class=\"prettyprint\">\n<code>\n" +
+          "<pre class=\"prettyprint\"><code>\n" +
           splitText[i] +
           "</code></pre>";
       }
