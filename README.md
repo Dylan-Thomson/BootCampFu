@@ -40,7 +40,7 @@ Designing the database schema for the overall website was a challenge as it was 
 
 ## Guest Account
 If you want to try the site but do not wish to create an account, sign in using these credentials:
-* Username: guest
+* Email: guestaccount@guest.com
 * Passowrd: Gu3$t
 
 ## How To Clone
