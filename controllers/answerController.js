@@ -18,7 +18,15 @@ answerController.getAnswers = (req, res) => {
     where: {
       QuestionId: req.params.questionId
     },
-    include: [db.User, db.Question]
+    include: [
+      {
+        model: db.User,
+        attributes: ["username", "email"]
+      },
+      {
+        model: db.Question
+      }
+    ]
   }).then(dbAnswer => {
     res.json(dbAnswer);
   });
@@ -27,9 +35,17 @@ answerController.getAnswers = (req, res) => {
 answerController.getAnswerById = (req, res) => {
   db.Answer.findOne({
     where: {
-      id: req.params.id
+      id: req.params.answerId
     },
-    include: [db.User]
+    include: [
+      {
+        model: db.User,
+        attributes: ["username", "email"]
+      },
+      {
+        model: db.Question
+      }
+    ]
   }).then(dbAnswer => {
     res.json(dbAnswer);
   });

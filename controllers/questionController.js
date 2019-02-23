@@ -14,7 +14,15 @@ questionController.postQuestion = (req, res) => {
 
 questionController.getAll = (req, res) => {
   db.Question.findAll({
-    include: [db.User, db.Answer],
+    include: [
+      {
+        model: db.User,
+        attributes: ["username", "email"]
+      },
+      {
+        model: db.Answer
+      }
+    ],
     order: [["createdAt", "DESC"]]
   }).then(dbQuestion => {
     res.json(dbQuestion);
@@ -26,7 +34,15 @@ questionController.getById = (req, res) => {
     where: {
       id: req.params.id
     },
-    include: [db.User]
+    include: [
+      {
+        model: db.User,
+        attributes: ["username", "email"]
+      },
+      {
+        model: db.Answer
+      }
+    ]
   }).then(dbQuestion => {
     res.json(dbQuestion);
   });
@@ -37,7 +53,15 @@ questionController.getByTopic = (req, res) => {
     where: {
       topic: req.params.topic
     },
-    include: [db.User],
+    include: [
+      {
+        model: db.User,
+        attributes: ["username", "email"]
+      },
+      {
+        model: db.Answer
+      }
+    ],
     order: [["createdAt", "DESC"]]
   }).then(dbQuestion => {
     res.json(dbQuestion);
