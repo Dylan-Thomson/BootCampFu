@@ -42,12 +42,13 @@ module.exports = function(app) {
       console.log(dbQuestion);
       db.Answer.findAll({
         where: { QuestionId: req.params.id },
-        include: [db.User]
+        include: [db.User],
+        order: [["score", "DESC"]]
       }).then(dbAnswers => {
         res.render("question", {
           style: "question.css",
           question: dbQuestion,
-          answers: dbAnswers
+          answers: dbAnswers,
         });
       });
     });
