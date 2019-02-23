@@ -57,6 +57,13 @@ body .question-page .question .question-content-div {
   grid-column-end: 3;
 }
 
+@media (min-width: 768px) {
+  body .question-page .question {
+    -ms-grid-columns: 1fr 6fr;
+        grid-template-columns: 1fr 6fr;
+  }
+}
+
 body .question-page .answers {
   display: -ms-grid;
   display: grid;
@@ -86,6 +93,13 @@ body .question-page .answers .answer-content-div .answer-body {
 
 body .question-page .answers .answer-content-div .author {
   margin: 10px;
+}
+
+@media (min-width: 768px) {
+  body .question-page .answers {
+    -ms-grid-columns: 1fr 7fr;
+        grid-template-columns: 1fr 7fr;
+  }
 }
 
 body .question-page .reply-section {
@@ -119,5 +133,11 @@ body .question-page .reply-section .form-para #submit-custom-answer-btn {
   font-family: "Roboto Condensed", sans-serif;
   background-color: #f48024;
   cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  body .question-page {
+    margin-top: 70px;
+  }
 }
 /*# sourceMappingURL=question.css.map */
