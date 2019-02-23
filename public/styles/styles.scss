@@ -58,7 +58,7 @@ body {
             display: grid;
             grid-template-columns: 1fr 2fr;
             align-items: center;
-            height: 150px;
+            min-height: 150px;
 
             .upvotes-div {
          

@@ -4,7 +4,7 @@
     <div class="question">
         <div class="upvotes-div">
                 <i class="fas fa-chevron-up fa-lg upvote" data-questionid={{question.id}}></i>
-                <p class="upvotes-num">{{question.score}}</p> <!--templating-->
+                <p class="upvotes-num">{{question.score}}</p> 
                 <i class="fas fa-chevron-down fa-lg downvote" data-questionid={{question.id}}></i>
         </div>
         <div class="title-author">
@@ -35,14 +35,13 @@
 
     <section class="reply-section">
         <h1>Write a response</h1>
-        <form class="reply-form" action="/api/questions/{{question.id}}/answers" method="POST">
+        <form action="/api/questions/{{question.id}}/answers" method="POST">
             <p class="form-para">
-                Answer:<br>
-                <textarea id="answer-body" placeholder="Start crying" name="text"></textarea>
+                <textarea id="answer-body" placeholder="Try this.." name="text"></textarea>
             </p>
             <p class="form-para">
-                <button type="submit" value="Submit" id="submit-custom-answer-btn">Done!!!</button>
-            </p>
+                <button type="submit" value="Submit" id="submit-custom-answer-btn">Submit Response</button>
+            </p> 
         </form>
     </section>
 </div>

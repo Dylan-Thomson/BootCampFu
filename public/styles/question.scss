@@ -1,9 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 
+$colors: (
+    nav: #fafafb,
+    primary: #fff,
+    border: #0095ff,
+    button1: #f48024,
+    button2: #0095ff,
+    input-border: lightgrey
+);
+
+@function color ($color-name) {
+    @return map-get($colors, $color-name);
+}
 $inputheight: 25px;
 $inputborderradius: 10px;
 $inputpadding: 5px;
 $fontfamily: "Roboto Condensed", sans-serif;
+
+
 $tablet: 768px;
 $desktop: 920px;
 
@@ -35,7 +49,6 @@ body {
             margin-bottom: 19.920px;
             margin-left: 10px;
         }
-
 
         .question {
             display: grid;
@@ -76,6 +89,10 @@ body {
             display: grid;
             grid-template-columns: 1fr 5fr;
             grid-row: auto;
+            border-top: 2px solid rgb(233, 231, 231);
+            border-bottom: 2px solid rgb(233, 231, 231);
+            min-height: 150px;
+            align-items: center;
 
             .q-upvotes-div {
                 margin-top: 10px;
@@ -88,56 +105,50 @@ body {
 
             .answer-content-div {
                 .answer-body {
-                    margin-top: 10px;
+                    margin: 10px;
+                }
+
+                .author {
+                    margin: 10px;
+                }
+            }
+        }
+
+        .reply-section {
+
+            margin-bottom: 20px;
+
+            h1 {
+                font-size: 1.5em;
+                font-weight: bold;
+                margin-top: 19.920px;
+                margin-bottom: 19.920px;
+            }
+
+            .form-para {
+
+                #answer-body {
                     margin-left: 10px;
-                    margin-right: 10px;
+                    margin-bottom: 16px;
+                    height: 100px;
+                    width: 280px;
+                    border-radius: $inputborderradius;
+                    border: 1px solid color(input-border);
+                    outline: none !important;
+                    overflow: auto;
+                    font-family: "Roboto Condensed", sans-serif;
+                }
+
+                #submit-custom-answer-btn {
+                    margin-left: 10px;
+                    height: 30px;
+                    width: 100px;
+                    border: none;
+                    font-family: "Roboto Condensed", sans-serif;
+                    background-color: color(button1);
+                    cursor: pointer;
                 }
             }
         }
     }
-
-
-        
-        // }
-
-        // .reply-section { 
-        //     margin-top: 30px;
-        //     margin-left: 16px;
-        //     margin-right: 16px;
-
-        
-        //     .form-para {
-        //         margin: 5px;
-        //     }
-
-        //     #answer-username {
-        //         width: 75%;
-        //         padding: 12px 20px;
-        //         margin: 8px 0;
-        //         display: inline-block;
-        //         border: 1px solid #ccc;
-        //         border-radius: 4px;
-        //         box-sizing: border-box;
-        //     }
-
-        //     #answer-body {
-        //         width: 100%;
-        //         margin: 7px 0;    
-        //         padding: 12px 20px;
-        //         display: inline-block;
-        //         border: 1px solid #ccc;
-        //         border-radius: 4px;
-        //         box-sizing: border-box;
-        //     }
-
-        //     #submit-custom-answer-btn {
-        //         border: none;
-        //         height: 28px;
-        //         width: 60px;
-        //         border-radius: 10px;
-        //         background-color: color(button1);
-        //         outline: none !important;
-        //         cursor: pointer;
-        //     }
-        // }
-    }
+} 
