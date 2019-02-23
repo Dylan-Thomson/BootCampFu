@@ -31,7 +31,7 @@ body .recentquestions-section .recent-question {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 150px;
+  min-height: 150px;
 }
 
 body .recentquestions-section .recent-question .upvotes-div {
