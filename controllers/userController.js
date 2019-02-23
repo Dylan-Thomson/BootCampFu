@@ -15,7 +15,8 @@ userController.getUserById = (req, res) => {
     where: {
       id: req.params.id
     },
-    include: [db.Question]
+    include: [db.Question],
+    attributes: ["username", "email", "status"]
   }).then(dbUser => {
     res.json(dbUser);
   });
