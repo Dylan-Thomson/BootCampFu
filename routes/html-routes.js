@@ -48,7 +48,7 @@ module.exports = function(app) {
         res.render("question", {
           style: "question.css",
           question: dbQuestion,
-          answers: dbAnswers,
+          answers: dbAnswers
         });
       });
     });
