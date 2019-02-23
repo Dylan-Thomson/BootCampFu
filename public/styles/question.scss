@@ -83,6 +83,10 @@ body {
                 grid-column-start: 1;
                 grid-column-end: 3;
             }
+
+            @include tablet {
+                grid-template-columns: 1fr 6fr;
+            }
         }
 
         .answers {
@@ -111,6 +115,10 @@ body {
                 .author {
                     margin: 10px;
                 }
+            }
+
+            @include tablet {
+                grid-template-columns: 1fr 7fr;
             }
         }
 
@@ -149,6 +157,10 @@ body {
                     cursor: pointer;
                 }
             }
+        }
+
+        @include tablet {
+            margin-top: 70px;
         }
     }
 } 
