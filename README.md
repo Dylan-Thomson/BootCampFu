@@ -43,6 +43,50 @@ If you want to try the site but do not wish to create an account, sign in using 
 * Email: `guestaccount@guest.com`
 * Passowrd: `Gu3$t`
 
+## BootcampFu API
+### Users
+* GET `/api/users` returns JSON object containing all users in the following format:
+   * username
+   * email
+   * status
+   * Questions (array)
+   * Answers (array)
+ * GET `/api/users/:id` returns JSON object conataining the above information for the user with id of `:id`
+ 
+ ### Questions
+ * GET `/api/questions` returns JSON object containing all questions in th following format:
+   * id
+   * title
+   * text
+   * score
+   * topic
+   * createdAt
+   * updatedAt
+   * UserId
+   * User
+   * Answers (array)
+ * GET `/api/questions/:id` returns JSON object for the question with id of `:id`
+ * GET `/api/questions/topic/:topic` returns JSON object for all questions for a particular topic in the above format. Current topics include:
+   * HTML
+   * CSS
+   * JavaScript
+   * Firebase
+   * Node
+   * Express
+   * React
+### Answers
+* GET `/api/questions/:questionId/answers` returns JSON object for all answers to the questions with an id of `:questionId` in the following format:
+   * id
+   * text
+   * score
+   * createdAt
+   * updatedAt
+   * QuestionId
+   * UserId
+   * User
+   * Question
+* GET `/api/questions/:questionId/answers/:answerId` returns JSON object for answer with id of `:answerId` belonging to question with id of `:questionId`
+
 ## How To Clone
 * Open terminal to directory you wish to clone into and run `git clone https://github.com/Dylan-Thomson/BootCampFu.git`
 * Install modules by running `npm install`
