@@ -49,7 +49,7 @@ If you want to try the site but do not wish to create an account, sign in using 
 ### Users
 * GET `/api/users` returns JSON object containing all users in the following format:
    * username
-   * email
+   * id
    * status
    * Questions (array)
    * Answers (array)
