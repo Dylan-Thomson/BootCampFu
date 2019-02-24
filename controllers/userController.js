@@ -4,7 +4,7 @@ let userController = module.exports;
 userController.getUsers = (req, res) => {
   db.User.findAll({
     include: [db.Question, db.Answer],
-    attributes: ["username", "email", "status"]
+    attributes: ["username", "id", "status"]
   }).then(dbUser => {
     res.json(dbUser);
   });
@@ -16,7 +16,7 @@ userController.getUserById = (req, res) => {
       id: req.params.id
     },
     include: [db.Question, db.Answer],
-    attributes: ["username", "email", "status"]
+    attributes: ["username", "id", "status"]
   }).then(dbUser => {
     res.json(dbUser);
   });

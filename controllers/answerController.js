@@ -21,7 +21,7 @@ answerController.getAnswers = (req, res) => {
     include: [
       {
         model: db.User,
-        attributes: ["username", "email"]
+        attributes: ["username", "id"]
       },
       {
         model: db.Question
@@ -40,7 +40,7 @@ answerController.getAnswerById = (req, res) => {
     include: [
       {
         model: db.User,
-        attributes: ["username", "email"]
+        attributes: ["username", "id"]
       },
       {
         model: db.Question

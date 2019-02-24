@@ -17,7 +17,7 @@ questionController.getAll = (req, res) => {
     include: [
       {
         model: db.User,
-        attributes: ["username", "email"]
+        attributes: ["username", "id"]
       },
       {
         model: db.Answer
@@ -37,7 +37,7 @@ questionController.getById = (req, res) => {
     include: [
       {
         model: db.User,
-        attributes: ["username", "email"]
+        attributes: ["username", "id"]
       },
       {
         model: db.Answer
@@ -56,7 +56,7 @@ questionController.getByTopic = (req, res) => {
     include: [
       {
         model: db.User,
-        attributes: ["username", "email"]
+        attributes: ["username", "id"]
       },
       {
         model: db.Answer
