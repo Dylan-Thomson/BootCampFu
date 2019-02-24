@@ -22,9 +22,7 @@ if ($(".answer-body").length > 0) {
         splitText[i] = splitText[i].replace(/</g, "&lt;");
         splitText[i] = splitText[i].replace(/>/g, "&gt;");
         splitText[i] =
-          "<pre class=\"prettyprint\"><code>\n" +
-          splitText[i] +
-          "</code></pre>";
+          "<pre class=\"prettyprint\"><code>\n" + splitText[i] + "</code></pre>";
       }
     }
     $(".answer-body")[i].innerHTML = splitText.join("");
