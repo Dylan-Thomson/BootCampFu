@@ -56,7 +56,7 @@ If you want to try the site but do not wish to create an account, sign in using 
  * GET `/api/users/:id` returns JSON object conataining the above information for the user with id of `:id`
  
  ### Questions
- * GET `/api/questions` returns JSON object containing all questions in th following format:
+ * GET `/api/questions` returns JSON object containing all questions in the following format:
    * id
    * title
    * text
