@@ -2,6 +2,8 @@
 
 ## Coding Q&A Site for Trilogy Bootcamp Students
 
+![Screenshot](public/images/BCF.png)
+
 [Live Site](https://nameless-eyrie-66645.herokuapp.com/)
 
 BootcampFu is a question/answer forum for Trilogy coding bootcamp students. Students can create accounts and post questions and answers to topics related to the Trilogy curriculum. Users are also able to upvote or downvote questions and answers to reflect whether they thought that particular post was helpful to them. Inspired by [Stack Overflow](https://stackoverflow.com/).
