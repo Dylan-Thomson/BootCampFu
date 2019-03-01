@@ -3,9 +3,9 @@ if ($(".question-body-text").length > 0) {
     .text()
     .split("`");
   for (let i = 0; i < splitText.length; i++) {
+    splitText[i] = splitText[i].replace(/</g, "&lt;");
+    splitText[i] = splitText[i].replace(/>/g, "&gt;");
     if (i % 2 !== 0) {
-      splitText[i] = splitText[i].replace(/</g, "&lt;");
-      splitText[i] = splitText[i].replace(/>/g, "&gt;");
       splitText[i] =
         "<pre class=\"prettyprint\">\n<code>" + splitText[i] + "</code></pre>";
     }
@@ -18,11 +18,11 @@ if ($(".answer-body").length > 0) {
     console.log($(".answer-body")[i]);
     const splitText = $(".answer-body")[i].innerText.split("`");
     for (let i = 0; i < splitText.length; i++) {
+      splitText[i] = splitText[i].replace(/</g, "&lt;");
+      splitText[i] = splitText[i].replace(/>/g, "&gt;");
       if (i % 2 !== 0) {
-        splitText[i] = splitText[i].replace(/</g, "&lt;");
-        splitText[i] = splitText[i].replace(/>/g, "&gt;");
         splitText[i] =
-          "<pre class=\"prettyprint\"><code>\n" + splitText[i] + "</code></pre>";
+          "<pre class=\"prettyprint\">\n<code>" + splitText[i] + "</code></pre>";
       }
     }
     $(".answer-body")[i].innerHTML = splitText.join("");
