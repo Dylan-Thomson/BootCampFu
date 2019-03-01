@@ -15,17 +15,16 @@ if ($(".question-body-text").length > 0) {
 if ($(".answer-body").length > 0) {
   console.log($(".answer-body").length);
   for (let i = 0; i < $(".answer-body").length; i++) {
-    console.log($(".answer-body")[i]);
     const splitText = $(".answer-body")[i].innerText.split("`");
     for (let i = 0; i < splitText.length; i++) {
       splitText[i] = splitText[i].replace(/</g, "&lt;");
       splitText[i] = splitText[i].replace(/>/g, "&gt;");
       if (i % 2 !== 0) {
         splitText[i] =
-          "<pre class=\"prettyprint\">\n<code>" + splitText[i] + "</code></pre>";
+        "<pre class=\"prettyprint\">\n<code>" + splitText[i] + "</code></pre>";
       }
     }
-    $(".answer-body")[i].innerHTML = splitText.join("");
+    $(".answer-body").html(splitText.join(""));
   }
 }
 
