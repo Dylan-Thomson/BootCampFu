@@ -7,6 +7,10 @@ body {
   font-family: "Roboto Condensed", sans-serif;
 }
 
+pre {
+  margin: 1em 0;
+}
+
 body .question-page {
   margin-top: 100px;
 }
