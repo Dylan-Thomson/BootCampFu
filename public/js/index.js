@@ -13,9 +13,8 @@ if ($(".question-body-text").length > 0) {
   $(".question-body-text").html(splitText.join(""));
 }
 if ($(".answer-body").length > 0) {
-  console.log($(".answer-body").length);
+  const splitText = $(".answer-body")[i].innerText.split("`");
   for (let i = 0; i < $(".answer-body").length; i++) {
-    const splitText = $(".answer-body")[i].innerText.split("`");
     for (let i = 0; i < splitText.length; i++) {
       splitText[i] = splitText[i].replace(/</g, "&lt;");
       splitText[i] = splitText[i].replace(/>/g, "&gt;");
@@ -27,8 +26,6 @@ if ($(".answer-body").length > 0) {
     $(".answer-body").html(splitText.join(""));
   }
 }
-
-// console.log($(".answer-body"));
 
 $("#signup-login-btn").on("click", function() {
   window.location.href = "/signup";
