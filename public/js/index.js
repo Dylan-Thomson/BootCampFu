@@ -5,6 +5,8 @@ if ($(".question-body-text").length > 0) {
   for (let i = 0; i < splitText.length; i++) {
     splitText[i] = splitText[i].replace(/</g, "&lt;");
     splitText[i] = splitText[i].replace(/>/g, "&gt;");
+  }
+  for (let i = 0; i < splitText.length; i++) {
     if (i % 2 !== 0) {
       splitText[i] =
         "<pre class=\"prettyprint\">\n<code>" + splitText[i] + "</code></pre>";
@@ -13,18 +15,22 @@ if ($(".question-body-text").length > 0) {
   $(".question-body-text").html(splitText.join(""));
 }
 if ($(".answer-body").length > 0) {
-  const splitText = $(".answer-body")[i].innerText.split("`");
-  for (let i = 0; i < $(".answer-body").length; i++) {
+  $(".answer-body").each(function() {
+    const splitText = $(this)
+      .text()
+      .split("`");
     for (let i = 0; i < splitText.length; i++) {
       splitText[i] = splitText[i].replace(/</g, "&lt;");
       splitText[i] = splitText[i].replace(/>/g, "&gt;");
+    }
+    for (let i = 0; i < splitText.length; i++) {
       if (i % 2 !== 0) {
         splitText[i] =
-        "<pre class=\"prettyprint\">\n<code>" + splitText[i] + "</code></pre>";
+          "<pre class=\"prettyprint\">\n<code>" + splitText[i] + "</code></pre>";
       }
     }
-    $(".answer-body").html(splitText.join(""));
-  }
+    $(this).html(splitText.join(""));
+  });
 }
 
 $("#signup-login-btn").on("click", function() {
