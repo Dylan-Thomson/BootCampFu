@@ -6,6 +6,11 @@
 
 [Live Site](https://nameless-eyrie-66645.herokuapp.com/)
 
+## Guest Account
+If you want to try the site but do not wish to create an account, sign in using these credentials:
+* Email: `guestaccount@guest.com`
+* Passowrd: `Gu3$t`
+
 BootcampFu is a question/answer forum for Trilogy coding bootcamp students. Students can create accounts and post questions and answers to topics related to the Trilogy curriculum. Users are also able to upvote or downvote questions and answers to reflect whether they thought that particular post was helpful to them. Inspired by [Stack Overflow](https://stackoverflow.com/).
 
 ## Packages used: 
@@ -40,23 +45,18 @@ Designing the database schema for the overall website was a challenge as it was 
 * Interface enhancements
 * Notifications/Alerts
 
-## Guest Account
-If you want to try the site but do not wish to create an account, sign in using these credentials:
-* Email: `guestaccount@guest.com`
-* Passowrd: `Gu3$t`
-
 ## BootcampFu API
 ### Users
 * GET `/api/users` returns JSON object containing all users in the following format:
    * username
-   * email
+   * id
    * status
    * Questions (array)
    * Answers (array)
  * GET `/api/users/:id` returns JSON object conataining the above information for the user with id of `:id`
  
  ### Questions
- * GET `/api/questions` returns JSON object containing all questions in th following format:
+ * GET `/api/questions` returns JSON object containing all questions in the following format:
    * id
    * title
    * text
