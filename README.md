@@ -2,7 +2,7 @@
 
 ## Coding Q&A Site for Trilogy Bootcamp Students
 
-![Screenshot](public/images/BCF.png)
+![Screenshot](public/images/BCF1.png)
 
 [Live Site](https://nameless-eyrie-66645.herokuapp.com/)
 
